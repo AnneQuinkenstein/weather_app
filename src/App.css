@@ -55,16 +55,21 @@ p {
     margin: 5px; 
 }
 
-h1{
+h2{
     font-size: 4em;
 }
 
 .title{
-    font-size: 7em;
+    display: flex;
+    justify-content: center;
+    mix-blend-mode: normal;
+    background-color:  black;
+    border-radius: 1em;
+    font-size: 6em;
     padding: 2vw;
 }
 
-.title, h1 {
+.title, h2 {
     margin: auto;
     text-align: center;
     color: white;
@@ -96,11 +101,6 @@ h1{
     mix-blend-mode: difference;
   } 
 
-  input[type=button]{
-    font-size: 1em;
-  }
-
-
 .currentWeather{
     background-color: rgba(221, 221, 236, 0.4);
     box-shadow: 1em 0.5em 1em black; 
@@ -109,15 +109,7 @@ h1{
     align-items: center;
     margin: 5vh; 
     border-radius: 1em;
-}
-  
-.title:hover {
-    cursor: pointer;
-    mix-blend-mode: normal;
-    color: black; 
-    background-color: rgba(253, 253, 253, 0.6);
-    box-shadow: 1em 0.5em 1em black; 
-    border-radius: 1em;
+    font-size: 2em;
 }
 
 .daysContainer{
@@ -128,7 +120,7 @@ h1{
 .Day{
     display: flex;
     flex-direction: column;
-    background-color: rgba(253, 253, 253, 0.4);
+    background-color: rgba(221, 221, 236, 0.4);
     margin: 2vw; 
     padding: 1vw; 
     font-size: 1.2em;
@@ -149,4 +141,58 @@ h1{
     color: orange; 
     text-align: center;
     margin: 2px auto; 
+}
+
+.error, .error2{
+    width: 100vw; 
+    text-align: center; 
+    overflow: hidden;
+    position: relative;
+}
+
+.error h1, .error2 h1 {
+    color: white;
+    mix-blend-mode: difference;
+    overflow: hidden; 
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);	
+    transform: translateX(100%);
+}
+
+.error h1{
+    -moz-animation: scroll-left 10s linear infinite;
+    -webkit-animation: scroll-left 10s linear infinite;
+    animation: scroll-left 10s linear infinite;
+}
+
+.error2 h1{
+    -moz-animation: scroll-left 10s ease-in infinite;
+    -webkit-animation: scroll-left 10s ease-in infinite;;
+    animation: scroll-left 10s ease-in infinite;;
+    animation-delay: 13s;
+}
+
+
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   { 
+ -moz-transform: translateX(100%); 
+ -webkit-transform: translateX(100%); 
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); 
+ -webkit-transform: translateX(-100%); 
+ transform: translateX(-100%); 
+ }
 }

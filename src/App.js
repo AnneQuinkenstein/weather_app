@@ -50,16 +50,24 @@ const App = () => {
   }
 
   const image = () => {  
-    if (data) {return data.list[0].weather[0].icon}
+    if (data) {
+      return data.list[0].weather[0].icon
+    } else {
+      return '01d'
+    }
   }
 
   let sectionStyle = {
     backgroundImage: `url(${process.env.PUBLIC_URL + `/images/${image()}.png`})`
   };
+
+  let errorStyle = {
+    backgroundImage: `url(${process.env.PUBLIC_URL + `/images/error.gif`})`
+  };
   
   console.log(data);
   return (
-    <div className="App" style={ sectionStyle } >
+    <div className="App" style={ errorState? errorStyle : sectionStyle } >
       <div className='Navbar'><Navbar /></div>
       <div className='Maincomponent'>
         <Switch>

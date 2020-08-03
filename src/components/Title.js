@@ -6,7 +6,9 @@ const Title = (props) => {
     return (
         <>
             <div className="title"> 
-            <p>Weather >>  </p> <Search {...props} onSearch={props.onSearch} /></div>
+            <p>Weather >>  </p> 
+            <Search {...props} onSearch={props.onSearch} />
+            </div>
         </>
     )
 }

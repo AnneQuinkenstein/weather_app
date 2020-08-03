@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Search = (props) => {
 
     const [ text, setText ] = useState(); 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         props.onSearch(text);

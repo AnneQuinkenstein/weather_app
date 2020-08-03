@@ -12,7 +12,7 @@ const DaysList = (props) => {
   
     return(
         <>
-        <h1>5-days forecast</h1>
+        <h2>5-days forecast</h2>
         <div className="daysContainer">
             { dailyData.map(data => <Day {...data}/>) }
             
