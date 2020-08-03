@@ -8,8 +8,7 @@ import DaysList from './DaysList';
 const Home = (props) => {
     return (
         <div>
-            <Search onSearch={props.onSearch} />
-            {props && <Title {...props} />}
+            {props && <Title {...props} onSearch={props.onSearch} />}
             <CurrentWeather {...props} />
             <DaysList {...props} />
         </div>

@@ -1,11 +1,12 @@
 import React from 'react';
+import Search from './Search';
 
 
 const Title = (props) => {
     return (
         <>
             <div className="title"> 
-            <p>Weather >>  </p> <p> {props.city.name}</p> </div>
+            <p>Weather >>  </p> <Search {...props} onSearch={props.onSearch} /></div>
         </>
     )
 }
