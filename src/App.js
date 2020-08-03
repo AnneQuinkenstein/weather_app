@@ -43,7 +43,7 @@ const App = () => {
     if (data) {
       return <Home {...data} onSearch={onSearch} />
     } else if (errorState) {
-      return <Error />
+      return <Error changeErrorState={changeErrorState} onSearch={onSearch}/>
     } else {
       return <Loading isLoading={!data} />
     }
@@ -56,6 +56,10 @@ const App = () => {
       return '01d'
     }
   }
+  
+  const changeErrorState =()=> {
+    setErrorState(false); 
+  }
 
   let sectionStyle = {
     backgroundImage: `url(${process.env.PUBLIC_URL + `/images/${image()}.png`})`
@@ -64,7 +68,9 @@ const App = () => {
   let errorStyle = {
     backgroundImage: `url(${process.env.PUBLIC_URL + `/images/error.gif`})`
   };
-  
+
+ 
+  console.log('ErrorState:', errorState)
   console.log(data);
   return (
     <div className="App" style={ errorState? errorStyle : sectionStyle } >

@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Error = () => {
+const Error = (props) => {
+
+    const [ text, setText ] = useState(); 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.onSearch(text);
+        setText(''); 
+        props.changeErrorState(); 
+    }
+
     return (
-        <>
-            <div className='error2'><h1> please&nbsp;allow&nbsp;geolocation&nbsp;or&nbsp;type&nbsp;a&nbsp;city</h1></div>
-            <div className='error'><h1> Please&nbsp;allow&nbsp;geolocation&nbsp;or&nbsp;stay&nbsp;inside&nbsp;without&nbsp;a&nbsp;weather!</h1></div>
-        </> 
+        <div className="error">
+            <form className='errorForm'onSubmit={handleSubmit}>
+                <input type="text" onChange={(e) => setText(e.target.value)} placeholder='Please type a City or' value={text} autoFocus />
+            </form>
+            <div className='error'><h1> &nbsp;stay&nbsp;inside</h1></div>
+        </div>
     )
-   
+
 }
 
 export default Error;

@@ -63,10 +63,9 @@ h2{
     display: flex;
     justify-content: center;
     mix-blend-mode: normal;
-    background-color:  black;
+    background-color:  transparent; 
     border-radius: 1em;
     font-size: 6em;
-    padding: 2vw;
 }
 
 .title, h2 {
@@ -143,38 +142,44 @@ h2{
     margin: 2px auto; 
 }
 
-.error, .error2{
+.errorForm {
+	height: 2em;
+	font-size: 2em;
+	background-color: white;
+	mix-blend-mode: difference;
+	width: 30vw;
+	margin: auto;
+	border-radius: 0.5em;
+    padding: 0.1em;
+}
+
+.errorForm input[type=text]{
+    padding: 0.3em; 
+}
+
+.error {
     width: 100vw; 
     text-align: center; 
     overflow: hidden;
-    position: relative;
 }
 
-.error h1, .error2 h1 {
+.error h1 {
     color: white;
+    font-size: 10em; 
     mix-blend-mode: difference;
     overflow: hidden; 
     width: 100%;
     height: 100%;
     margin: 0;
+    position: absolute;
+    top: 70vh;
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);	
     transform: translateX(100%);
-}
-
-.error h1{
     -moz-animation: scroll-left 10s linear infinite;
     -webkit-animation: scroll-left 10s linear infinite;
     animation: scroll-left 10s linear infinite;
 }
-
-.error2 h1{
-    -moz-animation: scroll-left 10s ease-in infinite;
-    -webkit-animation: scroll-left 10s ease-in infinite;;
-    animation: scroll-left 10s ease-in infinite;;
-    animation-delay: 13s;
-}
-
 
 @-moz-keyframes scroll-left {
  0%   { -moz-transform: translateX(100%); }
