@@ -3,7 +3,6 @@ import Day from './Day';
 
 const DaysList = (props) => {
 
-    console.log(props.list)
     const [ dailyData, setdailyData ] = useState([])
 
    useEffect(() => setdailyData(props.list.filter(data => data.dt_txt.includes('15:00:00'))), [props]);
@@ -14,8 +13,7 @@ const DaysList = (props) => {
         <>
         <h2>5-days forecast</h2>
         <div className="daysContainer">
-            { dailyData.map(data => <Day {...data}/>) }
-            
+            { dailyData.map(data => <Day {...data}/>) }    
         </div>
         </>
     )

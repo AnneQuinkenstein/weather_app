@@ -14,6 +14,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const [errorState, setErrorState] = useState(false);
 
+
   useEffect(() => getLocation(), [])
 
   const getLocation = () => {
@@ -26,7 +27,6 @@ const App = () => {
 
   const error = () => setErrorState(true);
 
-
   const fetchData = (lat, lon) => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`)
       .then(res => res.json())
@@ -36,33 +36,23 @@ const App = () => {
   const onSearch = (cityName) => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`)
       .then(res => res.json())
-      .then(data => setData(data))
+      .then(data => setData(data));
   }
 
-  const renderData = () => {
-    if (data) {
-      return <Home {...data} onSearch={onSearch} />
-    } else if (errorState) {
-      return <Error setErrorStateFalse={setErrorStateFalse} onSearch={onSearch}/>
-    } else {
-      return <Loading isLoading={!data} />
-    }
-  }
-
-  const image = () => {  
+  const image = () => {
     if (data) {
       return data.list[0].weather[0].icon
     } else {
       return '01d'
     }
   }
-  
-  const setErrorStateFalse =()=> {
-    setErrorState(false); 
+
+  const setErrorStateFalse = () => {
+    setErrorState(false);
   }
-  
+
   const setErrorStateTrue = () => {
-    setErrorState(true); 
+    setErrorState(true);
   }
 
   let sectionStyle = {
@@ -73,22 +63,33 @@ const App = () => {
     backgroundImage: `url(${process.env.PUBLIC_URL + `/images/error.gif`})`
   };
 
- 
-  console.log('ErrorState:', errorState)
-  console.log(data);
+
+  const renderData = () => {
+    if (data) {
+      return <Home {...data} onSearch={onSearch} />
+    } else if (errorState) {
+      return <Error setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
+    } else {
+      return <Loading isLoading={!data} />
+    }
+  }
+
+
   return (
-    <div className="container" style={ errorState? errorStyle : sectionStyle } >
+    <div className="container" style={errorState ? errorStyle : sectionStyle} >
       <div className="App">
-        <div className='Navbar'><Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse}/></div>
-      <div className='Maincomponent'>
-        <Switch>
-          <Route exact path='/' render={() => renderData()} />
-          <Route path='/contact' component={Contact} />
-        </Switch>
+        <div className='Navbar'>
+          <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
+        </div>
+        <div className='Maincomponent'>
+          <Switch>
+            <Route exact path='/' render={() => renderData()} />
+            <Route path='/contact' component={Contact} />
+          </Switch>
+        </div>
+        <div className='Footer'><Footer /></div>
       </div>
-      <div className='Footer'><Footer /></div> 
-      </div>
-     
+
     </div>
   );
 }

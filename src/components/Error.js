@@ -14,7 +14,7 @@ const Error = (props) => {
     return (
         <div className="error">
             <form className='errorForm'onSubmit={handleSubmit}>
-                <input type="text" onChange={(e) => setText(e.target.value)} placeholder='Please type a City or' value={text} autoFocus />
+                <input type="text" onChange={(e) => setText(e.target.value)} placeholder='Please type a City or ...' value={text} autoFocus />
             </form>
             <div className='error'><h1> &nbsp;stay&nbsp;inside</h1></div>
         </div>
