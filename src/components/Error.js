@@ -8,7 +8,7 @@ const Error = (props) => {
         e.preventDefault();
         props.onSearch(text);
         setText(''); 
-        props.changeErrorState(); 
+        props.setErrorStateFalse(); 
     }
 
     return (

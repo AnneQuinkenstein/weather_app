@@ -43,7 +43,7 @@ const App = () => {
     if (data) {
       return <Home {...data} onSearch={onSearch} />
     } else if (errorState) {
-      return <Error changeErrorState={changeErrorState} onSearch={onSearch}/>
+      return <Error setErrorStateFalse={setErrorStateFalse} onSearch={onSearch}/>
     } else {
       return <Loading isLoading={!data} />
     }
@@ -57,8 +57,12 @@ const App = () => {
     }
   }
   
-  const changeErrorState =()=> {
+  const setErrorStateFalse =()=> {
     setErrorState(false); 
+  }
+  
+  const setErrorStateTrue = () => {
+    setErrorState(true); 
   }
 
   let sectionStyle = {
@@ -73,15 +77,18 @@ const App = () => {
   console.log('ErrorState:', errorState)
   console.log(data);
   return (
-    <div className="App" style={ errorState? errorStyle : sectionStyle } >
-      <div className='Navbar'><Navbar /></div>
+    <div className="container" style={ errorState? errorStyle : sectionStyle } >
+      <div className="App">
+        <div className='Navbar'><Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse}/></div>
       <div className='Maincomponent'>
         <Switch>
           <Route exact path='/' render={() => renderData()} />
           <Route path='/contact' component={Contact} />
         </Switch>
       </div>
-      <div className='Footer'><Footer /></div>
+      <div className='Footer'><Footer /></div> 
+      </div>
+     
     </div>
   );
 }

@@ -1,16 +1,24 @@
 *{
     font-family: 'B612', sans-serif;
     font-weight: bold;
+    font-size: 1.2vw; 
+}
+
+.container{
+    display: inline-block;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: black;
+    font-size: 5vw;
 }
 
 .App{
     display: flex;
     flex-direction: column;
-    height: 100vh; 
-    width: 100vw;  
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
+    flex-wrap: wrap;
+    min-height: 100%; 
+    min-width: 100%; 
 }
 
 .Maincomponent{
@@ -31,11 +39,10 @@ ul {
 li {
     list-style-type: none;
     background-color: rgba(221, 221, 236, 0.3);
-    box-shadow: 1em 0.5em 1em black; 
-    border-radius: 1em;
+    box-shadow: 1rem 0.5rem 1rem black; 
+    border-radius: 1rem;
     padding: 0px; 
-    margin: 10px;
-    font-size: 1em;
+    margin: 0.5rem
 }
 
 
@@ -46,74 +53,66 @@ li a {
     text-decoration: none;
   }
 
-.title{
-    display: flex;
-    justify-content: center;
-}
 
 p {
     margin: 5px; 
 }
 
-h2{
-    font-size: 4em;
-}
-
 .title{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     mix-blend-mode: normal;
     background-color:  transparent; 
-    border-radius: 1em;
-    font-size: 6em;
+    border-radius: 1rem;
+    margin: 2rem auto; 
 }
 
 .title, h2 {
-    margin: auto;
     text-align: center;
     color: white;
     mix-blend-mode: difference;
     overflow: hidden; 
     white-space: nowrap; 
-    margin: 0 auto; 
-    letter-spacing: .15em;
-    animation: 
-      typing 3.5s steps(40, end),
+    letter-spacing: .15rem;
+    font-size: 2.5rem;
   }
- 
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
 
-  input[type=text]{
-    font-size: 1em;
-    letter-spacing: .15em;
-    width: 45vw; 
-    white-space: nowrap; 
-    letter-spacing: .15em;
-    background-color: transparent;
-    border-color: transparent;
-    border-radius: 1em;
-    color: white; 
-    mix-blend-mode: difference;
-  } 
+.title p {
+    font-size: 2.5rem;
+}
+  
+  input[type="text"] {
+	font-size: 2.5rem;
+	letter-spacing: .15rem;
+	width: 45vw;
+	white-space: nowrap;
+	background-color: transparent;
+	border-color: transparent;
+    color: white;
+    padding: 1px; 
+	/* mix-blend-mode: difference; */
+}
 
 .currentWeather{
     background-color: rgba(221, 221, 236, 0.4);
-    box-shadow: 1em 0.5em 1em black; 
+    box-shadow: 1rem 0.5rem 1rem black; 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     margin: 5vh; 
-    border-radius: 1em;
-    font-size: 2em;
+    border-radius: 1rem;
+}
+
+.currentWeather div{
+    font-size: 1.3rem
 }
 
 .daysContainer{
     display: flex; 
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .Day{
@@ -122,9 +121,9 @@ h2{
     background-color: rgba(221, 221, 236, 0.4);
     margin: 2vw; 
     padding: 1vw; 
-    font-size: 1.2em;
-    border-radius: 1em;
-    box-shadow: 1em 0.5em 1em black; 
+    font-size: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 1rem 0.5rem 1rem black; 
 }
 
 .Day div:nth-child(2){
@@ -143,18 +142,18 @@ h2{
 }
 
 .errorForm {
-	height: 2em;
-	font-size: 2em;
+	height: 2rem;
+	font-size: 2rem;
 	background-color: white;
 	mix-blend-mode: difference;
 	width: 30vw;
 	margin: auto;
-	border-radius: 0.5em;
-    padding: 0.1em;
+	border-radius: 0.5rem;
+    padding: 0.1rem;
 }
 
 .errorForm input[type=text]{
-    padding: 0.3em; 
+    padding: 0.3rem; 
 }
 
 .error {
@@ -165,7 +164,7 @@ h2{
 
 .error h1 {
     color: white;
-    font-size: 10em; 
+    font-size: 10rem; 
     mix-blend-mode: difference;
     overflow: hidden; 
     width: 100%;
@@ -201,3 +200,11 @@ h2{
  transform: translateX(-100%); 
  }
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+    
+
+
+} 
