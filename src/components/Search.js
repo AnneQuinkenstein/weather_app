@@ -24,7 +24,6 @@ const Search = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" onChange={(e) => setText(e.target.value)} placeholder={cityType} value={text} autoFocus/>
-            {/* <input type='submit' value='Submit' /> */}
         </form>
     )
 }

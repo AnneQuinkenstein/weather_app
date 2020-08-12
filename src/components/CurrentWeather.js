@@ -8,11 +8,13 @@ const CurrentWeather = (props) => {
 
     return (
         <div className="currentWeather">
-            <img src={`http://openweathermap.org/img/wn/${props.list[0].weather[0].icon}@2x.png`} />
-            <div  className="description">{props.list[0].weather[0].description}</div>
+            <div className="pic">
+                <img src={`http://openweathermap.org/img/wn/${props.list[0].weather[0].icon}@2x.png`} />
+            </div>
+            <div className="description">{props.list[0].weather[0].description}</div>
             <div className="metrics">
-                <div><i class='fas fa-temperature-high'></i>&nbsp;&nbsp;{temp}&#176; C</div>
-                <div><i class='fas fa-wind'></i> &nbsp;{props.list[0].wind.speed}m/s</div>
+                <div><i class='fas fa-temperature-high'></i>&nbsp;&nbsp;{temp}&#176;C&nbsp;&nbsp; </div>
+                <div><i class='fas fa-wind'></i> &nbsp;{props.list[0].wind.speed}m/s </div>
             </div>
         </div>
     )
