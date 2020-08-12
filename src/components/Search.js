@@ -4,7 +4,7 @@ const Search = (props) => {
 
     const [ text, setText ] = useState(); 
     const [ didMount, setDidMount ] = useState(false)
-    const [ placeholder, setPlaceholder ] = useState(' << type other cities')
+    const [ placeholder, setPlaceholder ] = useState(' ...')
 
     useEffect(() => {
       if (didMount) {
