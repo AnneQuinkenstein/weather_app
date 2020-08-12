@@ -121,24 +121,20 @@ form{
 }
 
 .currentWeather{
-    background      : linear-gradient(
-                      to top,
-                      #ffffff 0%,
-                      #ffffff00 100%
-                    );
-    border-radius   : 100%;
-    border          : #43545c 1px solid;
-    height          : 35vh;
-    width           : 35vh;
-    transform-style : preserve-3d;
-    transition      : all 500ms ease;
+    background: linear-gradient( to top, #ffffff 0%, #ffffff00 100% );
+    border-radius: 100%;
+    border: #43545c 1px solid;
+    height: 35vh;
+    width: 35vh;
+    transform-style: preserve-3d;
+    transition: all 500ms ease;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin: 5vh auto; 
-    transform       : rotateY(360deg);
+    margin: 5vh auto 0 auto;
+    transform: rotateY(360deg);
 }
 
 .currentWeather img {
@@ -164,9 +160,12 @@ form{
     display: flex; 
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 3vh; 
 }
 
 .Day{
+    width: 10vw;
+    max-height: 35vh; 
     display: flex;
     flex-direction: column;
     background      : linear-gradient(
@@ -177,15 +176,24 @@ form{
     border          : #43545c 1px solid;
     transform-style : preserve-3d;
     transition      : all 500ms ease;
-    margin: 2vw; 
     padding: 1vw; 
     font-size: 0.5rem;
-    border-radius: 1rem;
-    /* box-shadow: 0.2rem 0.25rem 0.5rem black; */
+    border-radius: 15px 50px;
+}
+
+.forcastDay{
+    color: #ec6e4c;; 
+    text-align: center;
+    margin: 2px auto; 
+    font-size: 1.5rem; 
 }
 
 .Day div:nth-child(2){
-    text-align: center; 
+    height: 35%; 
+    display: flex;  
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
 }
 
 .Day div:nth-child(3){
@@ -193,25 +201,23 @@ form{
     margin: 0; 
 }
 
-.forcastDay{
-    color: #ec6e4c;; 
-    text-align: center;
-    margin: 2px auto; 
+.Day div img {
+    min-width: 100%;
 }
 
 .errorForm {
-        position: absolute;
-        top: 45vh;
-        left: 35vw;
-        height: 2rem;
-        background-color: white;
-        color: black; 
-        mix-blend-mode: difference;
-        width: 25vw;
-        margin: auto;
-        border-radius: 0.5rem;
-        padding: 0.1rem;      
-    }
+    position: absolute;
+    top: 45vh;
+    left: 35vw;
+    height: 2rem;
+    background-color: white;
+    color: black; 
+    mix-blend-mode: difference;
+    width: 25vw;
+    margin: auto;
+    border-radius: 0.5rem;
+    padding: 0.1rem;      
+}
 
 
 .errorForm input[type=text]{
