@@ -43,7 +43,7 @@ const App = () => {
     if (data) {
       return data.list[0].weather[0].icon
     } else {
-      return '01d'
+      return '00d'
     }
   }
 
@@ -77,19 +77,16 @@ const App = () => {
 
   return (
     <div className="container" style={errorState ? errorStyle : sectionStyle} >
-      <div className="App">
-        <div className='Navbar'>
-          <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
-        </div>
-        <div className='Maincomponent'>
-          <Switch>
-            <Route exact path='/' render={() => renderData()} />
-            <Route path='/contact' component={Contact} />
-          </Switch>
-        </div>
-        <div className='Footer'><Footer /></div>
+      {/* <div className='Navbar'>
+        <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
+      </div> */}
+      <div className='Maincomponent'>
+        <Switch>
+          <Route exact path='/' render={() => renderData()} />
+          <Route path='/contact' component={Contact} />
+        </Switch>
       </div>
-
+      <div className='Footer'><Footer /></div>
     </div>
   );
 }

@@ -10,10 +10,10 @@ const Day = (props) => {
             <Moment format="dddd" className="forcastDay">
                 {props.dt_txt}
             </Moment>
-            <div> {props.weather[0].description}</div>
             <div>
                 <img src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} />
             </div>
+            <div> {props.weather[0].description}</div>
             <div><i class='fas fa-temperature-high'></i>&nbsp;&nbsp;{temp}&#176; C</div>
             <div><i class='fas fa-wind'></i> &nbsp; {props.wind.speed}m/s</div>
         </div>

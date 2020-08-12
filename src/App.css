@@ -1,28 +1,42 @@
-*{
-    font-family: 'B612', sans-serif;
+*,  *:before,  *:after {
+    box-sizing : border-box;
+    box-sizing : inherit;
+    margin     : 0;
+    padding    : 0;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
     font-size: calc(0.8vw + 10px); 
 }
 
+html {
+    box-sizing : border-box;
+  }
+
+html, body {
+    width      : 100vw;
+    height     : 100vh;
+  }
+
 .container{
-    display: inline-block;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: cadetblue;
     min-height: 100vh;
     min-width: 100%;
     background-color: black;
     font-size: 5vw;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
 }
 
-.App{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    min-height: 100%; 
-    min-width: 100%; 
-}
 
 .Maincomponent{
-    margin: auto;
+    position: relative;
+    height: 90vh;
+    width: 90vw;
 }
 
 .Navbar {
@@ -66,21 +80,28 @@ p {
     mix-blend-mode: normal;
     background-color:  transparent; 
     border-radius: 1rem;
-    margin: 2rem auto; 
+    /* margin: -6vh 0 0 -37vw; */
+    position: absolute; 
+    top: 0vh; 
+    left: 0vw; 
 }
 
 .title, h2 {
-    text-align: center;
     color: white;
     mix-blend-mode: difference;
     overflow: hidden; 
     white-space: nowrap; 
     letter-spacing: .05rem;
     font-size: 2.5rem;
+    text-shadow: 0.2rem 0.25rem 0.5rem black;
   }
 
 .title p {
     font-size: 2.5rem;
+}
+
+form{
+    text-align: center; 
 }
   
   input[type="text"] {
@@ -94,19 +115,49 @@ p {
 	/* mix-blend-mode: difference; */
 }
 
+.current{
+    display: flex; 
+    flex-direction: column;
+}
+
 .currentWeather{
-    background-color: rgba(221, 221, 236, 0.4);
-    box-shadow: 0.2rem 0.25rem 0.5rem black;
+    background      : linear-gradient(
+                      to top,
+                      #ffffff 0%,
+                      #ffffff00 100%
+                    );
+    border-radius   : 100%;
+    border          : #43545c 1px solid;
+    height          : 35vh;
+    width           : 35vh;
+    transform-style : preserve-3d;
+    transition      : all 500ms ease;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin: 5vh; 
-    border-radius: 1rem;
+    margin: 5vh auto; 
+    transform       : rotateY(360deg);
 }
 
-.currentWeather div{
-    font-size: 1.3rem
+.currentWeather img {
+    position: absolute; 
+    top: 0;
+    width: 60%;
+}
+
+.currentWeather div.description{
+   margin-top: 12vh; 
+   font-size: 1.5rem; 
+}
+
+.currentWeather div.metrics{
+    margin: 0; 
+    padding: 0; 
+    font-size: 1rem; 
+    display: flex; 
+    flex-direction: row;
 }
 
 .daysContainer{
@@ -118,12 +169,19 @@ p {
 .Day{
     display: flex;
     flex-direction: column;
-    background-color: rgba(221, 221, 236, 0.4);
+    background      : linear-gradient(
+                      to top,
+                      #ffffff 0%,
+                      #ffffff00 100%
+                    );
+    border          : #43545c 1px solid;
+    transform-style : preserve-3d;
+    transition      : all 500ms ease;
     margin: 2vw; 
     padding: 1vw; 
     font-size: 0.5rem;
     border-radius: 1rem;
-    box-shadow: 0.2rem 0.25rem 0.5rem black;
+    /* box-shadow: 0.2rem 0.25rem 0.5rem black; */
 }
 
 .Day div:nth-child(2){
@@ -228,6 +286,17 @@ ul {
 
 .error h1 {
 	font-size: 3rem;
+}
+
+.Maincomponent .css-1hv9hnn{
+    height: 300px;
+    width: 300px;
+}
+
+.Maincomponent .css-1vmqmtv, .Maincomponent .css-18vbss7 {
+    height: 300px;
+    width: 300px;
+    transform: translate(50%, 50%)
 }
 
 } 
