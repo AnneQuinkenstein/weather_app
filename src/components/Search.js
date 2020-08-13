@@ -13,7 +13,6 @@ const Search = (props) => {
     }, [text])
 
     const cityType = props.city.name + placeholder
- console.log(cityType);
 
     const handleSubmit = (e) => {
         e.preventDefault();

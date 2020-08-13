@@ -1,8 +1,12 @@
-import React from 'react'; 
+import React from 'react';
 
 const Footer = () => {
-    return(
-        <div>Footer</div>
+    return (
+        <footer>
+            <a href="https://github.com/AnneQuinkenstein" class="link">
+                coded with <span class="love">&#9825;</span> by Anne Quinkenstein
+            </a>
+        </footer>
     )
 }
 

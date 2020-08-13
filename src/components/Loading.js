@@ -1,11 +1,26 @@
 import React from 'react';
-import BounceLoader from "react-spinners/BounceLoader";
-
+import BounceLoader from "react-spinners/BounceLoader"
 
 const Loading = ({ isLoading }) => {
     return (
-    <BounceLoader loading={isLoading}  size={700} color={'orange'} />
+        <div>
+            <div className='current'>
+                <div className="title loading">
+                    <p className="loading">Weather >>  </p>
+                    <div className="currentLoading">
+                        {/* <div className="pLoading">
+                            Trying to get your location...
+                        </div> */}
+                         <BounceLoader loading={isLoading}  size={300} color={'grey'} />
+                    </div>
+                </div>
+                <h2 className="loading">5-days forecast>></h2>
+            </div>
+        </div>
     )
 }
 
 export default Loading;
+
+
+

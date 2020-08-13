@@ -1,20 +1,20 @@
 *,  *:before,  *:after {
-    box-sizing : border-box;
-    box-sizing : inherit;
-    margin     : 0;
-    padding    : 0;
+    box-sizing: border-box;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
     font-size: calc(0.8vw + 10px); 
 }
 
 html {
-    box-sizing : border-box;
+    box-sizing: border-box;
   }
 
 html, body {
-    width      : 100vw;
-    height     : 100vh;
+    width: 100vw;
+    height: 100vh;
   }
 
 .container{
@@ -26,10 +26,10 @@ html, body {
     min-width: 100%;
     background-color: black;
     font-size: 5vw;
-    display         : flex;
-    flex-direction  : column;
-    justify-content : center;
-    align-items     : center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -68,9 +68,14 @@ li a {
     text-decoration: none;
   }
 
-
 p {
     margin: 5px; 
+}
+
+p.loading{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
 }
 
 .title{
@@ -80,10 +85,13 @@ p {
     mix-blend-mode: normal;
     background-color:  transparent; 
     border-radius: 1rem;
-    /* margin: -6vh 0 0 -37vw; */
     position: absolute; 
     top: 0vh; 
     left: 0vw; 
+}
+
+.title.loading{
+    width: 100%; 
 }
 
 .title, h2 {
@@ -95,6 +103,12 @@ p {
     font-size: 2.5rem;
     text-shadow: 0.2rem 0.25rem 0.5rem black;
   }
+
+h2.loading{
+    position: absolute; 
+    top: 45vh; 
+    left: 0; 
+}
 
 .title p {
     font-size: 2.5rem;
@@ -119,7 +133,6 @@ input[type="text"] {
 	border-color: transparent;
     color: white;
     padding: 1px; 
-	/* mix-blend-mode: difference; */
 }
 
 .current{
@@ -142,6 +155,15 @@ input[type="text"] {
     flex-wrap: wrap;
     margin: 5vh auto 0 auto;
     transform: rotateY(360deg);
+    transition: all 1s ease;
+}
+
+.currentLoading{
+    border-radius: 100%;
+    height: 35vh;
+    width: 35vh;
+    transform-style: preserve-3d;
+    margin: 5vh auto 0 auto;
 }
 
 .currentWeather .pic {
@@ -184,14 +206,14 @@ input[type="text"] {
     max-height: 35vh; 
     display: flex;
     flex-direction: column;
-    background      : linear-gradient(
+    background: linear-gradient(
                       to top,
                       #ffffff 0%,
                       #ffffff00 100%
                     );
-    border          : #43545c 1px solid;
-    transform-style : preserve-3d;
-    transition      : all 500ms ease;
+    border: #43545c 1px solid;
+    transform-style: preserve-3d;
+    transition: all 500ms ease;
     padding: 1vw; 
     font-size: 0.5rem;
     border-radius: 15px 50px;
@@ -257,7 +279,7 @@ input[type="text"] {
     height: 100%;
     margin: 0;
     position: absolute;
-    top: 70vh;
+    top: 50vh;
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);	
     transform: translateX(100%);
@@ -286,6 +308,22 @@ input[type="text"] {
  transform: translateX(-100%); 
  }
 }
+
+footer{
+    padding-top   : 0.3rem;
+  }
+
+footer a{
+    text-decoration: none; 
+    color: black; 
+    font-size     : 0.6rem;
+}
+
+footer.love {
+      font-size   : 0.3rem;
+      color: red; 
+    }
+
 
 @media (max-width: 600px) {
 .Navbar {

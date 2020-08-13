@@ -43,7 +43,7 @@ const App = () => {
     if (data) {
       return data.list[0].weather[0].icon
     } else {
-      return '00d'
+      return '04d'
     }
   }
 
