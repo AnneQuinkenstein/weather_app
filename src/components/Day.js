@@ -14,8 +14,8 @@ const Day = (props) => {
                 <img src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} />
             </div>
             <div> {props.weather[0].description}</div>
-            <div><i class='fas fa-temperature-high'></i>&nbsp;&nbsp;{temp}&#176; C</div>
-            <div><i class='fas fa-wind'></i> &nbsp; {props.wind.speed}m/s</div>
+            <div>&#x1F321;&nbsp;&nbsp;{temp}&#176;C</div>
+            <div>&#127786;&nbsp; {props.wind.speed}m/s</div>
         </div>
     )
 }

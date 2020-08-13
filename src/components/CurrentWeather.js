@@ -13,8 +13,8 @@ const CurrentWeather = (props) => {
             </div>
             <div className="description">{props.list[0].weather[0].description}</div>
             <div className="metrics">
-                <div><i class='fas fa-temperature-high'></i>&nbsp;&nbsp;{temp}&#176;C&nbsp;&nbsp; </div>
-                <div><i class='fas fa-wind'></i> &nbsp;{props.list[0].wind.speed}m/s </div>
+                <div>&#x1F321;&nbsp;&nbsp;{temp}&#176;C&nbsp;&nbsp; </div>
+                <div>&#127786; &nbsp;{props.list[0].wind.speed}m/s </div>
             </div>
         </div>
     )
