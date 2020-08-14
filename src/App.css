@@ -402,8 +402,33 @@ ul {
     flex-direction: row;
 }
 
-.title {
+.title{
+    position: relative; 
+    flex-wrap: nowrap;
     margin-top: 10px; 
+    justify-content: left; 
+}
+.title p {
+    font-size: 2rem;
+    margin: 1px;
+}
+
+.title form {
+	max-width: 45vw;
+}
+
+.title input {
+    font-size: 2rem;
+	padding: 0px;
+}
+
+.title p.tooltip {
+    left: 35vw;
+    font-size: 0.7rem; 
+}
+
+h2{
+    font-size: 1.5rem; 
 }
 
 .errorForm {
@@ -425,22 +450,9 @@ ul {
     width: 35vh;
     /* transform: translate(50%, 50%) */
 }
-.title{
-    position: relative; 
-    flex-wrap: nowrap;
-}
-.title p {
-	font-size: 1.5rem;
-}
-input[type="text"] {
-    font-size: 1.5rem;
+
+.currentWeather {
+	margin: 20px auto;
 }
 
-form {
-	width: 60vw;
-}
-
-.currentWeather{
-    margin: 1vh auto; 
-}
 } 
