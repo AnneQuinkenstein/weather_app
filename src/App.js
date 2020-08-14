@@ -76,11 +76,11 @@ const App = () => {
 
 
   return (
-    <div className="container" style={errorState ? errorStyle : sectionStyle} >
+    <div className="container fade" style={errorState ? errorStyle : sectionStyle} >
       {/* <div className='Navbar'>
         <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
       </div> */}
-      <div className='Maincomponent'>
+      <div className='Maincomponent fade'>
         <Switch>
           <Route exact path='/' render={() => renderData()} />
           <Route path='/contact' component={Contact} />

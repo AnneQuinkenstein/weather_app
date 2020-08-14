@@ -6,7 +6,7 @@ import DaysList from './DaysList';
 
 const Home = (props) => {
     return (
-        <div>
+        <div className="fade">
             <div className='current'>
             {props && <Title {...props} onSearch={props.onSearch} />}
             <CurrentWeather {...props} />

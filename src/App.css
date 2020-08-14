@@ -8,20 +8,22 @@
     font-size: calc(0.5vw + 15px); 
 }
 
-html {
-    box-sizing: border-box;
+html{
+    box-sizing: border-box; 
+    height: 100%;
   }
 
-html, body {
-    width: 100vw;
-    height: 100vh;
-  }
+body, .root, .container {
+    min-height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    margin: auto; 
+}
 
 .container{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: cadetblue;
     background-attachment: fixed;
     min-height: 100vh;
     min-width: 100%;
@@ -83,12 +85,12 @@ p.loading{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    mix-blend-mode: normal;
     background-color:  transparent; 
     border-radius: 1rem;
     position: absolute; 
     top: 0vh; 
     left: 0vw; 
+    font-size: 2.5rem;
 }
 
 .title.loading{
@@ -97,13 +99,15 @@ p.loading{
 
 .title, h2 {
     color: white;
-    mix-blend-mode: difference;
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
     overflow: hidden; 
     white-space: nowrap; 
     letter-spacing: .05rem;
-    font-size: 2.5rem;
-    text-shadow: 0.2rem 0.25rem 0.5rem black;
   }
+
+h2{
+    font-size: 2rem;
+}
 
 h2.loading{
     position: absolute; 
@@ -119,11 +123,13 @@ h2.loading{
 	position: absolute;
 	font-size: 0.6rem;
 	top: -1vh;
-	left: 15vw;
+    left: 15vw;
+    color: white; 
+    filter: drop-shadow(-2px -2px 1px black);
 }
 
 form{
-    text-align: center; 
+    text-align: center;
 }
   
 input[type="text"] {
@@ -132,13 +138,69 @@ input[type="text"] {
 	white-space: nowrap;
 	background-color: transparent;
 	border-color: transparent;
-    color: white;
     padding: 1px; 
+    opacity: 1; 
+    color: white;
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
 }
+
+::-webkit-input-placeholder {
+    opacity: 1; 
+    color: white;
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+  }
+  ::-moz-placeholder { 
+    opacity: 1; 
+    color: white;
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+  }
+  :-ms-input-placeholder {
+    opacity: 1; 
+    color: white;
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+  }
+  :-moz-placeholder {
+    opacity: 1; 
+    color: white; 
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+  }
 
 .current{
     display: flex; 
     flex-direction: column;
+}
+
+.firstfade{
+    animation: firstfadein 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes firstfadein {
+    0%{
+        opacity: 0.6;
+        transform: scale(0.97);
+    }
+    100%{
+        opacity: 0.7;
+        transform: scale(0.99);
+    }
+}
+
+.fade{
+    animation: fadein 1s ease-in-out;
+}
+
+
+@keyframes fadein {
+    0%{
+        opacity: 0.7;
+        transform: scale(0.99);
+    }
+    100%{
+        opacity: 1;
+        transform:  scale(1);
+    }
 }
 
 .currentWeather{
@@ -157,6 +219,7 @@ input[type="text"] {
     margin: 5vh auto 0 auto;
     transform: rotateY(360deg);
     transition: all 1s ease;
+    filter: drop-shadow(-2px -2px 1px white);
 }
 
 .currentLoading{
@@ -179,7 +242,7 @@ input[type="text"] {
 .currentWeather .pic img {
     min-width: 100%; 
     min-height: 100%; 
-    scale: 1.5; 
+    scale: 1.4; 
 }
 
 .currentWeather div.description{
@@ -222,10 +285,11 @@ input[type="text"] {
 }
 
 .forcastDay{
-    color: #ec6e4c;; 
+    color: white; 
     text-align: center;
     margin: 2px auto; 
     font-size: 1.5rem; 
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10)) ;
 }
 
 .Day div:nth-child(2){
@@ -234,11 +298,13 @@ input[type="text"] {
     justify-content: center; 
     align-items: center;
     overflow: hidden; 
+    filter: drop-shadow(0 3px 1px white);
 }
 
 .Day div:nth-child(3){
     text-align: center; 
     margin: 0; 
+    filter: drop-shadow(0 3px 1px white);
 }
 
 .Day div img {

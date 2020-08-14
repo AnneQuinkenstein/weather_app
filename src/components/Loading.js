@@ -3,7 +3,7 @@ import BounceLoader from "react-spinners/BounceLoader"
 
 const Loading = ({ isLoading }) => {
     return (
-        <div>
+        <div className="firstfade">
             <div className='current'>
                 <div className="title loading">
                     <p className="loading">Weather >>  </p>
