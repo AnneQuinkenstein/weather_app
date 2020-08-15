@@ -7,13 +7,13 @@ const CurrentWeather = (props) => {
     const [randNumTopLeft, setRandNumTopLeft] = useState(125);
     const prevRandNumTopLeft = usePrevious(randNumTopLeft);
 
-    const [randNumTopRight, setRandNumTopRight] = useState(125);
+    const [randNumTopRight, setRandNumTopRight] = useState(130);
     const prevRandNumTopRight = usePrevious(randNumTopRight);
 
-    const [randNumBottomLeft, setRandNumBottomLeft] = useState(125);
+    const [randNumBottomLeft, setRandNumBottomLeft] = useState(50);
     const prevRandNumBottomLeft = usePrevious(randNumBottomLeft);
 
-    const [randNumBottomRight, setRandNumBottomRight] = useState(125);
+    const [randNumBottomRight, setRandNumBottomRight] = useState(70);
     const prevRandNumBottomRight = usePrevious(randNumBottomRight);
 
     function usePrevious(value) {
@@ -26,7 +26,7 @@ const CurrentWeather = (props) => {
 
     useEffect(() => {
         return setInterval(() =>
-            setRandNumTopLeft(Math.floor(Math.random() * 40) + 50)
+            setRandNumTopLeft(Math.floor(Math.random() * 40) + 200)
             , 1000)
     }, [])
 
@@ -38,13 +38,13 @@ const CurrentWeather = (props) => {
 
     useEffect(() => {
         return setInterval(() =>
-            setRandNumBottomLeft(Math.floor(Math.random() * 40) + 200)
+            setRandNumBottomLeft(Math.floor(Math.random() * 40) + 130)
             , 1000)
     }, [])
 
     useEffect(() => {
         return setInterval(() =>
-            setRandNumBottomRight(Math.floor(Math.random() * 40) + 100)
+            setRandNumBottomRight(Math.floor(Math.random() * 40) + 70)
             , 1000)
     }, [])
 
@@ -52,18 +52,18 @@ const CurrentWeather = (props) => {
     const temp = (props.list[0].main.temp * 2).toFixed() / 2;
 
     const border = keyframes`
-    from {
+    0% {
         border-radius: ${prevRandNumTopLeft}px ${prevRandNumTopRight}px ${prevRandNumBottomLeft}px ${prevRandNumBottomRight}px;
     }
   
-    to {
+    100% {
         border-radius: ${randNumTopLeft}px ${randNumTopRight}px ${randNumBottomLeft}px ${randNumBottomRight}px;
     }
   `
 
     return (
         <div css={css`
-        animation: ${border} 5000ms ease-in infinite;
+        animation: ${border} 50000ms linear infinite;
       `} className='currentWeather'>
             <div className="pic">
                 <img src={`http://openweathermap.org/img/wn/${props.list[0].weather[0].icon}@2x.png`} />
