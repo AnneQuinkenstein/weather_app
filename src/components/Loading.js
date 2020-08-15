@@ -8,9 +8,6 @@ const Loading = ({ isLoading }) => {
                 <div className="title loading">
                     <p className="loading">Weather >>  </p>
                     <div className="currentLoading">
-                        {/* <div className="pLoading">
-                            Trying to get your location...
-                        </div> */}
                          <BounceLoader loading={isLoading}  size={300} color={'grey'} />
                     </div>
                 </div>
