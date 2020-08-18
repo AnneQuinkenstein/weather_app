@@ -9,8 +9,13 @@ const Day = (props) => {
     const temp = (props.main.temp * 2).toFixed() / 2;
 
     useEffect(() => {
-        return setInterval(() => setRandNumTopLeft(Math.floor(Math.random() * 40) + 50), Math.floor(Math.random() * 1000)+500)
+        setrandNum();
     }, [])
+    
+    const setrandNum = () => {
+        return setInterval(() => setRandNumTopLeft(Math.floor(Math.random() * 40) + 50), Math.floor(Math.random() * 1000)+500)
+    }
+    
 
     const randNumTopRight = Math.floor(Math.random() * 40) + 30;
     const randNumBottomLeft = Math.floor(Math.random() * 40) + 80;

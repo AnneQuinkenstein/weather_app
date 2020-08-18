@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Error from './components/Error';
+import NoLocationAllowed from './components/NoLocationAllowed';
 import Loading from './components/Loading';
 
 
@@ -13,6 +13,7 @@ const App = () => {
 
   const [data, setData] = useState(null);
   const [errorState, setErrorState] = useState(false);
+  const [err, setErr] = useState(null);
 
 
   useEffect(() => getLocation(), [])
@@ -35,9 +36,17 @@ const App = () => {
 
   const onSearch = (cityName) => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`)
-      .then(res => res.json())
-      .then(data => setData(data));
+      .then(res => {
+        if (res.status === 404) {
+          throw new Error("I didn't find this city. Please try again!");
+        } else { setErr(null); 
+          return res.json();};
+       
+      })
+      .then(data => setData(data), err => setErr(err))
   }
+
+  console.log(err);
 
   const image = () => {
     if (data) {
@@ -66,9 +75,9 @@ const App = () => {
 
   const renderData = () => {
     if (data) {
-      return <Home {...data} onSearch={onSearch} />
+      return <Home {...data} onSearch={onSearch} err={err}/>
     } else if (errorState) {
-      return <Error setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
+      return <NoLocationAllowed setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
     } else {
       return <Loading isLoading={!data} />
     }
