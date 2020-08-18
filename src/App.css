@@ -145,17 +145,17 @@ input[type="text"] {
     color: white;
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
   }
-  ::-moz-placeholder { 
+::-moz-placeholder { 
     opacity: 1; 
     color: white;
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
   }
-  :-ms-input-placeholder {
+:-ms-input-placeholder {
     opacity: 1; 
     color: white;
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
   }
-  :-moz-placeholder {
+:-moz-placeholder {
     opacity: 1; 
     color: white; 
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
@@ -210,6 +210,7 @@ input[type="text"] {
     align-items: center;
     flex-wrap: wrap;
     margin: 5vh auto 0 auto;
+    border-radius: 50%;
 }
 
 .currentLoading{
