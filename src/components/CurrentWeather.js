@@ -56,6 +56,7 @@ const CurrentWeather = (props) => {
     const prevRandNumTopRight = usePrevious(randNumTopRight);
     const prevRandNumBottomLeft = usePrevious(randNumBottomLeft);
     const prevRandNumBottomRight = usePrevious(randNumBottomRight);
+    
 
 
     // keyframe for Border-Change Animation
@@ -71,7 +72,8 @@ const CurrentWeather = (props) => {
 
     return (
         <div css={css`
-        animation: ${border} 5000ms linear infinite;
+        animation: ${border} 5s linear;
+        animation-iteration-count: infinite; 
       `} className='currentWeather'>
             <div className="pic">
                 <img src={`http://openweathermap.org/img/wn/${props.list[0].weather[0].icon}@2x.png`} />

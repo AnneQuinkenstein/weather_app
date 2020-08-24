@@ -41,12 +41,9 @@ const App = () => {
           throw new Error("I didn't find this city. Please try again!");
         } else { setErr(null); 
           return res.json();};
-       
       })
       .then(data => setData(data), err => setErr(err))
   }
-
-  console.log(err);
 
   const image = () => {
     if (data) {
