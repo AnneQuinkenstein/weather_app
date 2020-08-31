@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -7,6 +8,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NoLocationAllowed from './components/NoLocationAllowed';
 import Loading from './components/Loading';
+import BodyClassName from 'react-body-classname';
+import { jsx } from '@emotion/core'
 
 
 const App = () => {
@@ -39,8 +42,10 @@ const App = () => {
       .then(res => {
         if (res.status === 404) {
           throw new Error("I didn't find this city. Please try again!");
-        } else { setErr(null); 
-          return res.json();};
+        } else {
+          setErr(null);
+          return res.json();
+        };
       })
       .then(data => setData(data), err => setErr(err))
   }
@@ -61,18 +66,13 @@ const App = () => {
     setErrorState(true);
   }
 
-  let sectionStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL + `/images/${image()}.png`})`
-  };
+  let sectionStyle = (process.env.PUBLIC_URL + `/images/${image()}.png`);
 
-  let errorStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL + `/images/error.gif`})`
-  };
-
+  let errorStyle = (process.env.PUBLIC_URL + `/images/error.gif`);
 
   const renderData = () => {
     if (data) {
-      return <Home {...data} onSearch={onSearch} err={err}/>
+      return <Home {...data} onSearch={onSearch} err={err} />
     } else if (errorState) {
       return <NoLocationAllowed setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
     } else {
@@ -80,20 +80,21 @@ const App = () => {
     }
   }
 
-
   return (
-    <div className="container fade" style={errorState ? errorStyle : sectionStyle} >
-      {/* <div className='Navbar'>
+    <BodyClassName className="container fade"  css={{backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")`}}>
+      <div>
+        {/* <div className='Navbar'>
         <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
       </div> */}
-      <div className='Maincomponent fade'>
-        <Switch>
-          <Route exact path='/' render={() => renderData()} />
-          <Route path='/contact' component={Contact} />
-        </Switch>
+        <div className='Maincomponent fade'>
+          <Switch>
+            <Route exact path='/' render={() => renderData()} />
+            <Route path='/contact' component={Contact} />
+          </Switch>
+        </div>
+        <div className='Footer'><Footer /></div>
       </div>
-      <div className='Footer'><Footer /></div>
-    </div>
+    </BodyClassName>
   );
 }
 
