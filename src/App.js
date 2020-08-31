@@ -66,9 +66,13 @@ const App = () => {
     setErrorState(true);
   }
 
-  let sectionStyle = (process.env.PUBLIC_URL + `/images/${image()}.png`);
+  let sectionStyle = 
+   (process.env.PUBLIC_URL + `/images/${image()}.png`)
+  ;
 
-  let errorStyle = (process.env.PUBLIC_URL + `/images/error.gif`);
+  let errorStyle = 
+     (process.env.PUBLIC_URL + `/images/error.gif`)
+  ;
 
   const renderData = () => {
     if (data) {
@@ -81,11 +85,11 @@ const App = () => {
   }
 
   return (
-    <BodyClassName className="container fade"  css={{backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")`}}>
-      <div>
+   <BodyClassName className="container fade"  css={{backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")`}}>
         {/* <div className='Navbar'>
         <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
       </div> */}
+      <div>
         <div className='Maincomponent fade'>
           <Switch>
             <Route exact path='/' render={() => renderData()} />
