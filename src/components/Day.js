@@ -45,7 +45,7 @@ const Day = (props) => {
         border-radius: ${randNumTopLeft}px ${randNumTopRight}px ${randNumBottomLeft}px ${randNumBottomRight}px / ${randNumTopLeft2}px ${randNumTopRight2}px ${randNumBottomLeft2}px ${randNumBottomRight2}px;
       }
     0%, 100% {
-        border-radius: 60% 40% 90% 30% / 60% 60% 70% 90%;
+        border-radius: 70% 90% 90% 70% / 90% 70% 80% 90%;
       }`
 
     return (
@@ -68,39 +68,3 @@ const Day = (props) => {
 
 export default Day;
 
-
-class Clock extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { date: new Date() };
-    }
-
-    componentDidMount() {
-        console.log('start timer');
-        this.timerID = setInterval(
-            () => this.tick(),
-            1000
-        );
-    }
-
-    componentWillUnmount() {
-        console.log('stop timer', this.timerID);
-        clearInterval(this.timerID);
-    }
-
-    tick() {
-        console.log('tick is called');
-        this.setState({
-            date: new Date()
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Hello, world!</h1>
-                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-            </div>
-        );
-    }
-}

@@ -5,7 +5,12 @@
     padding: 0;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
-    font-size: calc(0.5vw + 15px); 
+    font-size: calc(0.5vw + 15px);    
+}
+
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 html{
@@ -15,7 +20,9 @@ html{
 
 body{
     position: relative; 
+    overflow: auto;
 }
+
 .container{
     background-size: cover;
     background-repeat: no-repeat;
@@ -203,6 +210,8 @@ input[type="text"] {
     position: relative; 
     height: 35vh;
     width: 35vh;
+    min-height: 200px; 
+    min-width: 200px; 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -277,6 +286,8 @@ input[type="text"] {
     border-radius: 100%;
     height: 35vh;
     width: 35vh;
+    min-height: 200px; 
+    min-width: 200px; 
     transform-style: preserve-3d;
     margin: 5vh auto 0 auto;
 }
@@ -320,8 +331,10 @@ input[type="text"] {
 }
 
 .Day{
-    width: 25vh;
-    max-height: 35vh; 
+    width: 22vh;
+    min-width: 100px; 
+    max-height: 35vh;
+    min-height: 200px; 
     display: flex;
     flex-direction: column;
     background: radial-gradient(
@@ -330,7 +343,7 @@ input[type="text"] {
                     );
     transform-style: preserve-3d;
     transition: all 500ms ease;
-    padding: 1vw; 
+    padding: 2vw; 
     font-size: 0.5rem;
     margin: 0 4vh 4vh 4vh; 
     transition: all 1s ease-in-out;
@@ -357,6 +370,7 @@ input[type="text"] {
     text-align: center; 
     margin: 0; 
     filter: drop-shadow(0 3px 1px white);
+    white-space: nowrap;
 }
 
 .Day div img {

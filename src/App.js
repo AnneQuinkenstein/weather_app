@@ -95,8 +95,9 @@ const App = () => {
             <Route exact path='/' render={() => renderData()} />
             <Route path='/contact' component={Contact} />
           </Switch>
+          <div className='Footer'><Footer /></div>
         </div>
-        <div className='Footer'><Footer /></div>
+       
       </div>
     </BodyClassName>
   );
