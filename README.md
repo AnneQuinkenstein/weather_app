@@ -1,4 +1,8 @@
-This Project was made with **React JS**.
+
+
+![weatherapp](weaterapp.gif)
+
+This project was made with **React JS** ... 
 * Hooks
 * Open Weather Map API
 * Error Handling
@@ -7,10 +11,6 @@ This Project was made with **React JS**.
   * Moment (for getting Days) 
   * @emotion/core (to insert CSS with Javascript) 
   * react-body-classname (insert Javascript/ CSS to `<body>` to handle background-pics on Mobile Devices)
-
-![weatherapp](weaterapp.gif)
-
-
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
