@@ -200,8 +200,7 @@ input[type="text"] {
 }
 
 .currentWeather{
-    background: linear-gradient( to top, #ffffff 0%, #ffffff00 100% );
-    border: #43545c 1px solid;
+    position: relative; 
     height: 35vh;
     width: 35vh;
     display: flex;
@@ -211,6 +210,67 @@ input[type="text"] {
     flex-wrap: wrap;
     margin: 5vh auto 0 auto;
     border-radius: 50%;
+}
+
+.currentWeather span{
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(  #ffffff50 90%,#ffffff); 
+  }
+  
+  .currentWeather span:nth-child(1) {
+      border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+      transition: 0.5s;
+      animation: animate 8s linear infinite;
+  }
+  
+  
+  .currentWeather span:nth-child(2) {
+      border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+      transition: 0.5s;
+      animation: animate 6s linear infinite;
+  }
+  
+  .currentWeather span:nth-child(3) {
+      border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+      transition: 0.5s;
+      animation: animate2 12s linear infinite;
+  }
+
+
+  .currentWeather span:nth-child(4) {
+    border-radius: 36% 42% 70% 30% / 42% 50% 56% 80%;
+    transition: 0.5s;
+    animation: animate2 10s linear infinite;
+}
+
+
+.currentWeather span:nth-child(5) {
+    border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+    transition: 0.5s;
+    animation: animate2 18s linear infinite;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .currentLoading{
@@ -234,6 +294,7 @@ input[type="text"] {
     min-width: 100%; 
     min-height: 100%; 
     scale: 1.4; 
+    filter: drop-shadow(-2px 2px 1px black);
 }
 
 .currentWeather div.description{
@@ -259,23 +320,22 @@ input[type="text"] {
 }
 
 .Day{
-    width: 20vh;
+    width: 25vh;
     max-height: 35vh; 
     display: flex;
     flex-direction: column;
-    background: linear-gradient(
-                      to top,
-                      #ffffff 0%,
-                      #ffffff00 100%
+    background: radial-gradient(
+                      #ffffff,
+                      #ffffff00
                     );
-    border: #43545c 1px solid;
     transform-style: preserve-3d;
     transition: all 500ms ease;
     padding: 1vw; 
     font-size: 0.5rem;
     margin: 0 4vh 4vh 4vh; 
+    transition: all 1s ease-in-out;
 }
-
+  
 .forcastDay{
     color: white; 
     text-align: center;
