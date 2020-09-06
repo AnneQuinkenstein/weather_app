@@ -1,3 +1,9 @@
+This Project was made with React, API Open Weather App, Hooks & the Librarys Moment to style the Date + @emotion/core to style inline CSS with Javascript. 
+
+![]
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
