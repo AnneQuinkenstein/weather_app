@@ -1,8 +1,12 @@
-This Project was made with React, API Open Weather App, Hooks & the Librarys Moment to style the Date + @emotion/core to style inline CSS with Javascript. 
+This Project was made with **React JS**.
+* Hooks
+* OpenWeatherMap API
+* Librarys:  
+  * Moment (for getting Days) 
+  * @emotion/core (to insert CSS with Javascript) 
+  * react-body-classname (insert Javascript/ CSS to `<body>` to handle background-pics on Mobile Devices)
 
-x-special/nautilus-clipboard
-copy
-file:///home/lisa/Documents/Codeschool/React/weather_app/weaterapp.gif
+![weatherapp](https://github.com/AnneQuinkenstein/weather_app/blob/weaterapp.gif)
 
 
 
