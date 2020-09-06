@@ -8,6 +8,7 @@ This project was made with **React JS** ...
 * Error Handling
 * Geo Location
 * Librarys:  
+  * React Animation Groups 
   * Moment (for displaying Days) 
   * @emotion/core (to insert CSS with Javascript) 
   * react-body-classname (insert Javascript/ CSS to `<body>` to handle background-pics on Mobile Devices)
