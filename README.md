@@ -1,6 +1,9 @@
 This Project was made with React, API Open Weather App, Hooks & the Librarys Moment to style the Date + @emotion/core to style inline CSS with Javascript. 
 
-![weahter-app gif](https://raw.githubusercontent.com/AnneQuinkenstein/waether_app/weaterapp.gif )
+x-special/nautilus-clipboard
+copy
+file:///home/lisa/Documents/Codeschool/React/weather_app/weaterapp.gif
+
 
 
 
