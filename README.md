@@ -2,6 +2,7 @@
 # Weather?! App
 
 1. askes about Location -> if you don't give the permission to your Location, Weather?!-App will give you a HomeScreen with an Input Field for a City 
+![stayhome](stayhome.gif)
 2. disyplays Weather?! of today & a five Day Forecast
 
 ![weatherapp](weaterapp.gif)
