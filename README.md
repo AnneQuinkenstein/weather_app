@@ -1,12 +1,14 @@
 This Project was made with **React JS**.
 * Hooks
-* OpenWeatherMap API
+* Open Weather Map API
+* Error Handling
+* Geo Location
 * Librarys:  
   * Moment (for getting Days) 
   * @emotion/core (to insert CSS with Javascript) 
   * react-body-classname (insert Javascript/ CSS to `<body>` to handle background-pics on Mobile Devices)
 
-![weatherapp](https://github.com/AnneQuinkenstein/weather_app/blob/weaterapp.gif)
+![weatherapp](weaterapp.gif)
 
 
 
