@@ -49,20 +49,20 @@ const Day = (props) => {
       }`
 
     return (
-        <div css={css`
+            <div css={css`
         animation: ${morph} 16s ease-in-out ;
         animation-iteration-count: infinite; 
       `} className="Day">
-            <Moment format="dddd" className="forcastDay">
-                {props.dt_txt}
-            </Moment>
-            <div>
-                <img src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} />
+                <Moment format="dddd" className="forcastDay">
+                    {props.dt_txt}
+                </Moment>
+                <div>
+                    <img src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} />
+                </div>
+                <div> {props.weather[0].description}</div>
+                <div>&#x1F321;&nbsp;&nbsp;{temp}&#176;C</div>
+                <div>&#127786;&nbsp; {props.wind.speed}m/s</div>
             </div>
-            <div> {props.weather[0].description}</div>
-            <div>&#x1F321;&nbsp;&nbsp;{temp}&#176;C</div>
-            <div>&#127786;&nbsp; {props.wind.speed}m/s</div>
-        </div>
     )
 }
 

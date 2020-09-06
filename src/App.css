@@ -149,23 +149,46 @@ input[type="text"] {
 
 ::-webkit-input-placeholder {
     opacity: 1; 
-    color: white;
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
   }
 ::-moz-placeholder { 
     opacity: 1; 
-    color: white;
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
   }
 :-ms-input-placeholder {
     opacity: 1; 
-    color: white;
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
   }
 :-moz-placeholder {
     opacity: 1; 
-    color: white; 
     filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+  }
+
+.title ::-webkit-input-placeholder {
+    color: white;
+  }
+.title ::-moz-placeholder { 
+    color: white;
+  }
+.title :-ms-input-placeholder {
+    color: white;
+  }
+.title :-moz-placeholder {
+    color: white; 
+  }
+
+
+.errorForm ::-webkit-input-placeholder {
+    color: black;
+  }
+.errorForm ::-moz-placeholder { 
+    color: black;
+  }
+.errorForm :-ms-input-placeholder {
+    color: black;
+  }
+.errorForm :-moz-placeholder {
+    color: black; 
   }
 
 .current{
@@ -190,7 +213,7 @@ input[type="text"] {
     }
 }
 
-.fade{
+ .fade{
     animation: fadein 1s ease-in-out;
 }
 
@@ -204,7 +227,16 @@ input[type="text"] {
         opacity: 1;
         transform:  scale(1);
     }
-}
+} 
+
+.currentWeather-exit {  }
+.currentWeather-exit-active { transform: scale(0.8); opacity: 0; transition: transform 0.5s cubic-bezier(0.55, 0, 1, 0.45), opacity 0.5s; }
+
+.currentWeather-enter { transform: scale(0.1); }
+.currentWeather-enter-active { transform: scale(1); transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.currentWeather-appear { transform: scale(0.1); }
+.currentWeather-appear-active { transform: scale(1); transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1); }
 
 .currentWeather{
     position: relative; 
@@ -334,7 +366,7 @@ input[type="text"] {
     width: 22vh;
     min-width: 100px; 
     max-height: 35vh;
-    min-height: 200px; 
+    min-height: 200px;  
     display: flex;
     flex-direction: column;
     background: radial-gradient(
@@ -509,11 +541,9 @@ h2{
 .Maincomponent .css-1ghrie9, .Maincomponent .css-qg4eyy, .Maincomponent .css-5u8h2s{
     height: 35vh;
     width: 35vh;
-    /* transform: translate(50%, 50%) */
 }
 
 .currentWeather {
 	margin: 20px auto;
 }
-
 } 

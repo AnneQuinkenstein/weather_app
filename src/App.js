@@ -1,10 +1,7 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-import Contact from './components/Contact';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NoLocationAllowed from './components/NoLocationAllowed';
 import Loading from './components/Loading';
@@ -66,17 +63,17 @@ const App = () => {
     setErrorState(true);
   }
 
-  let sectionStyle = 
-   (process.env.PUBLIC_URL + `/images/${image()}.png`)
-  ;
+  let sectionStyle =
+    (process.env.PUBLIC_URL + `/images/${image()}.png`)
+    ;
 
-  let errorStyle = 
-     (process.env.PUBLIC_URL + `/images/error.gif`)
-  ;
+  let errorStyle =
+    (process.env.PUBLIC_URL + `/images/error.gif`)
+    ;
 
   const renderData = () => {
     if (data) {
-      return <Home {...data} onSearch={onSearch} err={err} />
+      return  <Home {...data} onSearch={onSearch} err={err} />
     } else if (errorState) {
       return <NoLocationAllowed setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
     } else {
@@ -85,19 +82,13 @@ const App = () => {
   }
 
   return (
-   <BodyClassName className="container fade"  css={{backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")`}}>
-        {/* <div className='Navbar'>
-        <Navbar setErrorStateTrue={setErrorStateTrue} setErrorStateFalse={setErrorStateFalse} />
-      </div> */}
+    <BodyClassName className="container fade" css={{ backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")` }}>
       <div>
         <div className='Maincomponent fade'>
-          <Switch>
-            <Route exact path='/' render={() => renderData()} />
-            <Route path='/contact' component={Contact} />
-          </Switch>
+          {renderData()}
           <div className='Footer'><Footer /></div>
         </div>
-       
+
       </div>
     </BodyClassName>
   );
