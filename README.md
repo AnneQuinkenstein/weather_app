@@ -5,18 +5,22 @@
 1. Frist askes about Location 
 -  -> if you don't give the permission to your Location
    - -> Weather?!-App will give you a HomeScreen with an Input Field for a City 
-
+   
+ <br/><br/>
 
 ![stayhome](stayhome.gif)
 
-
+ <br/> <br/>
+  
 ### and now? <br/>
 if you allow the Location or type in a City of your Choice <br/>
-### -> it disyplays Weather?! of today & a five Day Forecast
+### -> it disyplays Weather?! of today & a 5 days forecast
 
-
+<br/><br/>
+  
 ![weatherapp](weaterapp.gif)
 
+<br/> <br/>
 
 This project was made with **React JS** ... 
 * Hooks
