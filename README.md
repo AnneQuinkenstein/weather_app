@@ -14,7 +14,7 @@
   
 ### and now? <br/>
 if you allow the Location <br/> or type in a City of your Choice <br/>
-### - -> Weather?! displays the weather of today & a 5 days forecast
+### - -> Weather?! displays the weather of today in a moving cloud & a 5 days forecast
 
 <br/><br/>
   
