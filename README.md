@@ -2,9 +2,9 @@
 # The [Weather?! App ](https://weather-aquin.netlify.app/)
 
 
-1. Frist askes about Location 
--  -> if you don't give the permission to your Location
-   - -> Weather?!-App will give you a HomeScreen with an Input Field for a City 
+1. Frist the weather app askes about Location 
+-  -> you don't give permission to your Location
+   - -> Weather?! will give you a HomeScreen with an Input Field for a City 
    
  <br/><br/>
 
@@ -13,8 +13,8 @@
  <br/> <br/>
   
 ### and now? <br/>
-if you allow the Location or type in a City of your Choice <br/>
-### -> it disyplays Weather?! of today & a 5 days forecast
+if you allow the Location <br/> or type in a City of your Choice <br/>
+### - -> Weather?! displays the weather of today & a 5 days forecast
 
 <br/><br/>
   
