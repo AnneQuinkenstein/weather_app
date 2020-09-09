@@ -13,7 +13,7 @@ const CurrentWeather = (props) => {
             <span></span>
             <span></span>
             <div className="pic">
-                <img src={`http://openweathermap.org/img/wn/${props.list[0].weather[0].icon}@2x.png`} />
+                <img src={`//openweathermap.org/img/wn/${props.list[0].weather[0].icon}@2x.png`} />
             </div>
             <div className="description">{props.list[0].weather[0].description}</div>
             <div className="metrics">
