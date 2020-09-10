@@ -3,7 +3,7 @@
 
 
 1. Frist the weather app askes about Location 
--  -> you don't give permission to your Location
+-  -> if you don't give permission to your Location
    - -> Weather?! will give you a HomeScreen with an Input Field for a City 
    
  <br/><br/>
@@ -15,6 +15,7 @@
 ### and now? <br/>
 if you allow the Location <br/> or type in a City of your Choice <br/>
 ### - -> Weather?! displays the weather of today in a moving cloud & a 5 days forecast
+it will display a picture of the weather in the background accourding to the daytime or night
 
 <br/><br/>
   
