@@ -15,7 +15,7 @@
 ### and now? <br/>
 if you allow the Location <br/> or type in a City of your Choice <br/>
 ### - -> Weather?! displays the weather of today in a moving cloud & a 5 days forecast
-it will display a picture of the weather in the background accourding to the daytime or night
+it will display a picture of the weather in the background accourding to the day or nighttime 
 
 <br/><br/>
   
