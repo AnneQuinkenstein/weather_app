@@ -475,19 +475,19 @@ input[type="text"] {
  }
 }
 
+
 footer{
-    padding-top   : 0.3rem;
+    position: absolute; 
+    top: 3vh; 
+    right: 4vw; 
   }
 
 footer a{
     text-decoration: none; 
     color: black; 
     font-size: 0.6rem;
-}
-
-@media (max-width: 600px) {
-.Navbar {
-    position: relative;
+    cursor: pointer;
+    z-index: 999; 
 }
 
 ul {
