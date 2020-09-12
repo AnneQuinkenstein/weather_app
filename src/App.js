@@ -84,11 +84,10 @@ const App = () => {
   return (
     <BodyClassName className="container fade" css={{ backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")` }}>
       <div>
+     <div className='Footer'><Footer /></div>
         <div className='Maincomponent fade'>
           {renderData()}
-          <div className='Footer'><Footer /></div>
         </div>
-
       </div>
     </BodyClassName>
   );
