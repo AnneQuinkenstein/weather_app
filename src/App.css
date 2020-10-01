@@ -1,14 +1,17 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: bold;
   font-size: calc(0.5vw + 15px);
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   outline: none;
 }
 
@@ -114,13 +117,14 @@ p.loading {
   width: 100%;
 }
 
-.title, h2 {
+.title,
+h2 {
   color: white;
   -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
           filter: drop-shadow(0 3px 1px #5c3f0a);
   overflow: hidden;
   white-space: nowrap;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05rem;
 }
 
 form {
@@ -129,7 +133,7 @@ form {
 
 input[type="text"] {
   font-size: 2.5rem;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05rem;
   white-space: nowrap;
   background-color: transparent;
   border-color: transparent;
@@ -447,7 +451,7 @@ input[type="text"] {
   top: 70vh;
   left: 40vw;
   font-size: 4rem;
-  font-family: 'Cookie', cursive;
+  font-family: "Cookie", cursive;
 }
 
 .currentWeather .pic {
@@ -568,33 +572,37 @@ input[type="text"] {
   min-width: 100%;
 }
 
-.errorForm {
-  position: absolute;
-  left: 25vw;
-  top: 38vh;
-  height: 2rem;
-  color: black;
-  margin: auto;
-  border-radius: 0.5rem;
-  padding: 0.1rem 0.3rem;
-}
-
-.errorForm input[type=text] {
-  padding: 0.2rem 0.7rem;
-  color: black;
-  font-size: 1.5rem;
-  background-color: #e68349;
-  border-radius: 25px; 
-  mix-blend-mode: color-dodge;
-}
-
-.error {
-  width: 100vw;
-  text-align: center;
+div {
   overflow: hidden;
 }
 
-.error h1 {
+div .errorForm {
+  position: absolute;
+  top: 45vh;
+  left: 35vw;
+  height: 2rem;
+  color: black;
+  width: 25vw;
+  margin: auto;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+}
+
+div .errorForm input[type="text"] {
+  padding: 0.1rem;
+  color: black;
+  font-size: 1.5rem;
+  background-color: #e68349;
+  border-radius: 25px;
+  mix-blend-mode: color-dodge;
+}
+
+div .error {
+  width: 100vw;
+  text-align: center;
+}
+
+div .error h1 {
   color: #e68349;
   font-size: 10rem;
   mix-blend-mode: difference;
@@ -723,13 +731,19 @@ h2.loading {
   left: 0;
 }
 
+.errorForm {
+  width: 90%;
+  left: 3vw;
+}
 
 .Maincomponent .css-1hv9hnn {
   height: 25vh;
   width: 25vh;
 }
 
-.Maincomponent .css-1ghrie9, .Maincomponent .css-qg4eyy, .Maincomponent .css-5u8h2s {
+.Maincomponent .css-1ghrie9,
+.Maincomponent .css-qg4eyy,
+.Maincomponent .css-5u8h2s {
   height: 35vh;
   width: 35vh;
 }
