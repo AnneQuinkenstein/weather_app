@@ -12,7 +12,7 @@ const NoLocationAllowed = (props) => {
     }
 
     return (
-        <div className="error">
+        <div>
             <form className='errorForm'onSubmit={handleSubmit}>
                 <input type="text" onChange={(e) => setText(e.target.value)} placeholder='Please type a City or ...' value={text} autoFocus />
             </form>

@@ -51,6 +51,7 @@ const App = () => {
 
   const image = () => {
     if (data) {
+      console.log(data);
       return data.list[0].weather[0].icon
     } else {
       return '04d'
