@@ -6,7 +6,6 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 
 const Home = (props) => {
-    console.log('props', props.city.id);
     return (
         <div className="fade">
             <div className='current'>
@@ -30,5 +29,3 @@ const Home = (props) => {
 }
 
 export default Home;
-
-// <div className="fade"> außen rum

@@ -13,9 +13,9 @@
  <br/> <br/>
   
 ### and now? <br/>
-if you allow the Location <br/> or type in a City of your Choice <br/>
-### - -> Weather?! displays the weather of today in a moving cloud & a 5 days forecast
-it will display a picture of the weather in the background accourding to the day or nighttime 
+If you allow to grab your Location <br/> or type in a City of your Choice <br/>
+### - -> Weatherornot will display the weather of today in a moving cloud & a 5 days forecast
+A picture of the weather accourding day or nighttime will appear in the background. 
 
 <br/><br/>
   
@@ -33,3 +33,5 @@ This project was made with **React JS** ...
   * Moment (for displaying Days) 
   * @emotion/core (to insert CSS with Javascript) 
   * react-body-classname (insert Javascript/ CSS to `<body>` to handle background-pics on Mobile Devices)
+  * React-Spinners
+  

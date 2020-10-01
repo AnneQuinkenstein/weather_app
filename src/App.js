@@ -16,15 +16,17 @@ const App = () => {
   const [err, setErr] = useState(null);
 
 
-  useEffect(() => getLocation(), [])
+  useEffect(() => {
 
-  const getLocation = () => {
-    navigator.geolocation.getCurrentPosition(position => {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
-      fetchData(lat, lon);
-    }, error)
-  }
+    const getLocation = () => {
+      navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        fetchData(lat, lon);
+      }, error)}
+    getLocation();
+  },[])
+
 
   const error = () => setErrorState(true);
 
@@ -59,10 +61,6 @@ const App = () => {
     setErrorState(false);
   }
 
-  const setErrorStateTrue = () => {
-    setErrorState(true);
-  }
-
   let sectionStyle =
     (process.env.PUBLIC_URL + `/images/${image()}.png`)
     ;
@@ -73,7 +71,7 @@ const App = () => {
 
   const renderData = () => {
     if (data) {
-      return  <Home {...data} onSearch={onSearch} err={err} />
+      return <Home {...data} onSearch={onSearch} err={err} />
     } else if (errorState) {
       return <NoLocationAllowed setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
     } else {
@@ -82,12 +80,12 @@ const App = () => {
   }
 
   return (
-    <BodyClassName className="container fade" css={{ backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")` }}>
-      <div>
-     <div className='Footer'><Footer /></div>
+    <BodyClassName className="container" css={{ backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")` }}>
+      <div className="content">
         <div className='Maincomponent fade'>
           {renderData()}
         </div>
+        <div className='Footer'><Footer /></div>
       </div>
     </BodyClassName>
   );

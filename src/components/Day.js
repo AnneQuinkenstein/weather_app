@@ -57,7 +57,7 @@ const Day = (props) => {
                     {props.dt_txt}
                 </Moment>
                 <div>
-                    <img src={`//openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} />
+                    <img src={`//openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`} alt="pic of current weather"/>
                 </div>
                 <div> {props.weather[0].description}</div>
                 <div>&#x1F321;&nbsp;&nbsp;{temp}&#176;C</div>
