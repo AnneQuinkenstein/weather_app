@@ -12,6 +12,7 @@ const Loading = ({ isLoading }) => {
                     </div>
                 </div>
                 <h2 className="loading">5-days forecast>></h2>
+                <h1 className="margritte">Ceci n'est pas le temps.</h1>
             </div>
         </div>
     )

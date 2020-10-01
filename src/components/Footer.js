@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer>
             <a href="https://github.com/AnneQuinkenstein" className="link">
-                coded with &#128049; by Anne Quinkenstein
+                coded with <span role="img" aria-labelledby="cat"> &#128049; </span> by Anne Quinkenstein
             </a>
         </footer>
     )
