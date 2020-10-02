@@ -17,7 +17,6 @@ const App = () => {
 
 
   useEffect(() => {
-
     const getLocation = () => {
       navigator.geolocation.getCurrentPosition(position => {
         const lat = position.coords.latitude;

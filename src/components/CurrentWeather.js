@@ -1,4 +1,7 @@
 import React from 'react';
+import { WiThermometerExterior } from 'react-icons/wi';
+import { WiStrongWind } from 'react-icons/wi';
+
 
 const CurrentWeather = (props) => {
 
@@ -17,8 +20,8 @@ const CurrentWeather = (props) => {
             </div>
             <div className="description">{props.list[0].weather[0].description}</div>
             <div className="metrics">
-                <div>&#x1F321;&nbsp;&nbsp;{temp}&#176;C&nbsp;&nbsp; </div>
-                <div>&#127786; &nbsp;{props.list[0].wind.speed}m/s </div>
+                <div><WiThermometerExterior/>{temp}&#176;C&nbsp;&nbsp; </div>
+                <div><WiStrongWind/> {props.list[0].wind.speed}m/s </div>
             </div>
         </div>
     )

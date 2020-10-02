@@ -34,4 +34,5 @@ This project was made with **React JS** ...
   * @emotion/core (to insert CSS with Javascript) 
   * react-body-classname (insert Javascript/ CSS to `<body>` to handle background-pics on Mobile Devices)
   * React-Spinners
+  [React Icons](https://react-icons.github.io)
   

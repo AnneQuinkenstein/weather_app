@@ -158,11 +158,6 @@ input[type="text"] {
   color: black;
 }
 
-.current {
-  display: flex;
-  flex-direction: column;
-}
-
 .firstfade {
   animation: firstfadein 1s ease-in-out;
   animation-fill-mode: forwards;
@@ -194,7 +189,6 @@ input[type="text"] {
   }
 }
 
-
 .currentWeather-exit-active {
   transform: scale(0.98);
   opacity: 0.5;
@@ -217,57 +211,6 @@ input[type="text"] {
 .currentWeather-appear-active {
   transform: scale(1);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.currentWeather {
-  position: relative;
-  height: 35vh;
-  width: 35vh;
-  min-height: 200px;
-  min-width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  border-radius: 50%;
-  @media (max-width: 768px) {
-    margin: 3vh auto;
-  }
-  span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(#ffffff50 90%, #ffffff);
-    &:nth-child(1) {
-      border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
-      transition: 0.5s;
-      animation: animate 8s linear infinite;
-    }
-    &:nth-child(2) {
-      border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-      transition: 0.5s;
-      animation: animate 6s linear infinite;
-    }
-    &:nth-child(3) {
-      border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
-      transition: 0.5s;
-      animation: animate2 12s linear infinite;
-    }
-    &:nth-child(4) {
-      border-radius: 36% 42% 70% 30% / 42% 50% 56% 80%;
-      transition: 0.5s;
-      animation: animate2 10s linear infinite;
-    }
-    &:nth-child(5) {
-      border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
-      transition: 0.5s;
-      animation: animate2 18s linear infinite;
-    }
-  }
 }
 
 @keyframes animate {
@@ -305,35 +248,87 @@ input[type="text"] {
   font-family: "Cookie", cursive;
 }
 
-.currentWeather .pic {
-  height: 45%;
+.current {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  flex-direction: column;
+  .currentWeather {
+    position: relative;
+    height: 35vh;
+    width: 35vh;
+    min-height: 200px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border-radius: 50%;
+    @media (max-width: 768px) {
+      margin: 3vh auto;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(#ffffff50 90%, #ffffff);
+      &:nth-child(1) {
+        border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+        transition: 0.5s;
+        animation: animate 8s linear infinite;
+      }
+      &:nth-child(2) {
+        border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+        transition: 0.5s;
+        animation: animate 6s linear infinite;
+      }
+      &:nth-child(3) {
+        border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+        transition: 0.5s;
+        animation: animate2 12s linear infinite;
+      }
+      &:nth-child(4) {
+        border-radius: 36% 42% 70% 30% / 42% 50% 56% 80%;
+        transition: 0.5s;
+        animation: animate2 10s linear infinite;
+      }
+      &:nth-child(5) {
+        border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+        transition: 0.5s;
+        animation: animate2 18s linear infinite;
+      }
+    }
+    .pic {
+      height: 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        scale: 1.4;
+        filter: drop-shadow(-2px 2px 1px black);
+      }
+    }
+    div.description {
+      margin-top: -4vh;
+      font-size: 1.5rem;
+      filter: drop-shadow(-2px -2px 1px white);
+    }
+    div.metrics {
+      margin-top: -1vh;
+      padding-bottom: 4vh;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      filter: drop-shadow(-2px -2px 1px white);
+    }
+  }
 }
 
-.currentWeather .pic img {
-  min-width: 100%;
-  min-height: 100%;
-  scale: 1.4;
-  filter: drop-shadow(-2px 2px 1px black);
-}
-
-.currentWeather div.description {
-  margin-top: -4vh;
-  font-size: 1.5rem;
-  filter: drop-shadow(-2px -2px 1px white);
-}
-
-.currentWeather div.metrics {
-  margin-top: -1vh;
-  padding: 4vh;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  filter: drop-shadow(-2px -2px 1px white);
-}
 
 .daysContainer {
   display: flex;
@@ -384,8 +379,8 @@ input[type="text"] {
   min-width: 100%;
 }
 
-div {
-    overflow: hidden; 
+.noLocation {
+  overflow: hidden;
   .errorForm {
     position: absolute;
     top: 45vh;
