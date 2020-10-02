@@ -687,6 +687,7 @@ ul {
   font-size: 2.5rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  overflow: visible;
 }
 
 .title p {
@@ -702,6 +703,7 @@ ul {
   color: white;
   -webkit-filter: drop-shadow(-2px -2px 1px black);
           filter: drop-shadow(-2px -2px 1px black);
+  overflow: visible;
 }
 
 .title form {
@@ -711,6 +713,7 @@ ul {
 .title form input {
   font-size: 2rem;
   padding: 0px;
+  overflow: visible;
 }
 
 form {

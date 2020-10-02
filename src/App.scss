@@ -463,6 +463,7 @@ ul {
   border-radius: 1rem;
   font-size: 2.5rem;
   align-self: flex-start;
+  overflow: visible; 
   p {
     font-size: 2rem;
     margin: 1px;
@@ -474,12 +475,14 @@ ul {
     left: 15vw;
     color: white;
     filter: drop-shadow(-2px -2px 1px black);
+    overflow: visible; 
   }
   form {
     max-width: 45vw;
     input {
       font-size: 2rem;
       padding: 0px;
+      overflow: visible; 
     }
   }
 }
