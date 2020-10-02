@@ -653,6 +653,10 @@ input[type="text"] {
   z-index: 999;
 }
 
+.Footer footer a span {
+  padding-bottom: -6px;
+}
+
 ul {
   margin: 0.25px;
   -webkit-box-orient: horizontal;

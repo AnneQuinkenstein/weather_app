@@ -436,6 +436,9 @@ input[type="text"] {
     font-size: 0.6rem;
     cursor: pointer;
     z-index: 999;
+    span{
+      padding-bottom: -6px; 
+    }
   }
 }
 
