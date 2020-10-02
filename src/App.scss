@@ -1,3 +1,5 @@
+$orange: #e68349; 
+
 *,
 *:before,
 *:after {
@@ -67,14 +69,14 @@ li {
   border-radius: 1rem;
   padding: 0px;
   margin: 0.5rem;
+  a {
+    display: block;
+    color: #000;
+    padding: 8px 40px;
+    text-decoration: none;
+  }
 }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 40px;
-  text-decoration: none;
-}
 
 p {
   margin: 5px;
@@ -329,7 +331,6 @@ input[type="text"] {
   }
 }
 
-
 .daysContainer {
   display: flex;
   justify-content: space-evenly;
@@ -395,7 +396,7 @@ input[type="text"] {
       padding: 0.1rem;
       color: black;
       font-size: 1.5rem;
-      background-color: #e68349;
+      background-color: $orange;
       border-radius: 25px;
       mix-blend-mode: color-dodge;
     }
@@ -404,7 +405,7 @@ input[type="text"] {
     width: 100vw;
     text-align: center;
     h1 {
-      color: #e68349;
+      color: $orange;
       font-size: 10rem;
       mix-blend-mode: difference;
       width: 100%;
@@ -436,8 +437,14 @@ input[type="text"] {
     font-size: 0.6rem;
     cursor: pointer;
     z-index: 999;
-    span{
-      padding-bottom: -6px; 
+    span {
+      padding-bottom: -6px;
+      .footerIcon {
+        font-size: 1.5rem;
+        color: $orange;
+        margin-bottom: -10px;
+        padding: 4px 0; 
+      }
     }
   }
 }

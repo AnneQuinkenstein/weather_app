@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer>
             <a href="https://github.com/AnneQuinkenstein" className="link">
-                coded with <span role="img" aria-labelledby="coffee"><DiReact/></span> by Anne Quinkenstein
+                coded with <span role="img" aria-labelledby="coffee"><DiReact className='footerIcon'/></span> by Anne Quinkenstein
             </a>
         </footer>
     )

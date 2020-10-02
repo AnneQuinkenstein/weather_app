@@ -657,6 +657,13 @@ input[type="text"] {
   padding-bottom: -6px;
 }
 
+.Footer footer a span .footerIcon {
+  font-size: 1.5rem;
+  color: #e68349;
+  margin-bottom: -10px;
+  padding: 4px 0;
+}
+
 ul {
   margin: 0.25px;
   -webkit-box-orient: horizontal;
