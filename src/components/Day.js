@@ -38,7 +38,7 @@ const Day = (props) => {
   const randNumTopRight4 = Math.floor(Math.random() * 40) + 50;
 
   // keyframe for Border-Change Animation
-    const morph = keyframes`
+  const morph = keyframes`
     50% {
         border-radius: ${randNumTopLeft3}px ${randNumTopRight3}px ${randNumBottomLeft3}px ${randNumBottomRight3}px / ${randNumTopLeft4}px ${randNumTopRight4}px ${randNumBottomLeft4}px ${randNumBottomRight4}px;
     }
@@ -57,7 +57,7 @@ const Day = (props) => {
       `}
       className="Day"
     >
-      <Moment format="dddd" className="forcastDay">
+      <Moment format="dddd" className="dayName">
         {props.dt_txt}
       </Moment>
       <div>

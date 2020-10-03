@@ -10,11 +10,6 @@
   font-size: calc(0.5vw + 15px);
 }
 
-textarea:focus,
-input:focus {
-  outline: none;
-}
-
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -69,14 +64,14 @@ html body {
   width: 90vw;
 }
 
-.Navbar {
-  position: absolute;
-  right: 0;
-  z-index: 20;
+.firstfade {
+  -webkit-animation: firstfadein 1s ease-in-out;
+          animation: firstfadein 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
-ul {
-  margin: 0.5px;
+.firstfade .current {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,35 +81,40 @@ ul {
           flex-direction: column;
 }
 
-li {
-  list-style-type: none;
-  background-color: rgba(221, 221, 236, 0.3);
-  -webkit-box-shadow: 0.2rem 0.25rem 0.5rem black;
-          box-shadow: 0.2rem 0.25rem 0.5rem black;
-  border-radius: 1rem;
-  padding: 0px;
-  margin: 0.5rem;
+.firstfade .current .title.loading {
+  width: 100%;
 }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 40px;
-  text-decoration: none;
-}
-
-p {
-  margin: 5px;
-}
-
-p.loading {
+.firstfade .current .title.loading p.loading {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.title.loading {
-  width: 100%;
+.firstfade .current .title.loading .currentLoading {
+  border-radius: 100%;
+  height: 35vh;
+  width: 35vh;
+  min-height: 200px;
+  min-width: 200px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin: 5vh auto 0 auto;
+}
+
+.firstfade .current h2.loading {
+  position: absolute;
+  top: 45vh;
+  left: 0;
+  font-size: 1.5rem;
+}
+
+.firstfade .current .margritte {
+  position: absolute;
+  top: 70vh;
+  left: 40vw;
+  font-size: 4rem;
+  font-family: "Cookie", cursive;
 }
 
 .title,
@@ -127,21 +127,9 @@ h2 {
   letter-spacing: 0.05rem;
 }
 
-form {
-  text-align: center;
-}
-
-input[type="text"] {
-  font-size: 2.5rem;
-  letter-spacing: 0.05rem;
-  white-space: nowrap;
-  background-color: transparent;
-  border-color: transparent;
-  padding: 1px;
-  opacity: 1;
-  color: white;
-  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
-          filter: drop-shadow(0 3px 1px #5c3f0a);
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
 ::-webkit-input-placeholder {
@@ -197,11 +185,390 @@ input[type="text"] {
   color: black;
 }
 
-.firstfade {
-  -webkit-animation: firstfadein 1s ease-in-out;
-          animation: firstfadein 1s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+.fade {
+  -webkit-animation: fadein 1s ease-in-out;
+          animation: fadein 1s ease-in-out;
+}
+
+.fade .current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fade .current .title {
+  margin-top: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: transparent;
+  border-radius: 1rem;
+  font-size: 2.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  overflow: visible;
+}
+
+.fade .current .title p {
+  font-size: 2rem;
+  margin: 1px;
+}
+
+.fade .current .title .tooltip {
+  position: absolute;
+  font-size: 0.7rem;
+  top: -1vh;
+  left: 15vw;
+  color: white;
+  -webkit-filter: drop-shadow(-2px -2px 1px black);
+          filter: drop-shadow(-2px -2px 1px black);
+  overflow: visible;
+}
+
+.fade .current .title form {
+  max-width: 45vw;
+}
+
+.fade .current .title form input {
+  font-size: 2rem;
+  padding: 0px;
+  overflow: visible;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 1px;
+  opacity: 1;
+  color: white;
+  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
+          filter: drop-shadow(0 3px 1px #5c3f0a);
+}
+
+.fade .current .currentWeather {
+  position: relative;
+  height: 35vh;
+  width: 35vh;
+  min-height: 200px;
+  min-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .fade .current .currentWeather {
+    margin: 3vh auto;
+  }
+}
+
+.fade .current .currentWeather span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#ffffff50 90%, #ffffff);
+}
+
+.fade .current .currentWeather span:nth-child(1) {
+  border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: animate 8s linear infinite;
+          animation: animate 8s linear infinite;
+}
+
+.fade .current .currentWeather span:nth-child(2) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: animate 6s linear infinite;
+          animation: animate 6s linear infinite;
+}
+
+.fade .current .currentWeather span:nth-child(3) {
+  border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: animate2 12s linear infinite;
+          animation: animate2 12s linear infinite;
+}
+
+.fade .current .currentWeather span:nth-child(4) {
+  border-radius: 36% 42% 70% 30% / 42% 50% 56% 80%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: animate2 10s linear infinite;
+          animation: animate2 10s linear infinite;
+}
+
+.fade .current .currentWeather span:nth-child(5) {
+  border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: animate2 18s linear infinite;
+          animation: animate2 18s linear infinite;
+}
+
+.fade .current .currentWeather .pic {
+  height: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.fade .current .currentWeather .pic img {
+  min-width: 100%;
+  min-height: 100%;
+  scale: 1.4;
+  -webkit-filter: drop-shadow(-2px 2px 1px black);
+          filter: drop-shadow(-2px 2px 1px black);
+}
+
+.fade .current .currentWeather div.description {
+  margin-top: -4vh;
+  font-size: 1.5rem;
+  -webkit-filter: drop-shadow(-2px -2px 1px white);
+          filter: drop-shadow(-2px -2px 1px white);
+}
+
+.fade .current .currentWeather div.metrics {
+  margin-top: -1vh;
+  padding-bottom: 4vh;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-filter: drop-shadow(-2px -2px 1px white);
+          filter: drop-shadow(-2px -2px 1px white);
+}
+
+.fade h2 {
+  margin: -3vh 0 0 0;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .fade h2 {
+    margin: 3vh auto;
+  }
+}
+
+.fade .daysContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 3vh;
+}
+
+.fade .daysContainer .Day {
+  width: 22vh;
+  min-width: 180px;
+  max-height: 33vh;
+  min-height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: radial-gradient(#ffffff, #ffffff00);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  padding: 2vw;
+  font-size: 0.5rem;
+  margin: 2vh 1vw;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.fade .daysContainer .Day .forcastDay {
+  color: white;
+  font-size: 1.5rem;
+  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
+          filter: drop-shadow(0 3px 1px #5c3f0a);
+}
+
+.fade .daysContainer div:nth-child(2) {
+  height: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  -webkit-filter: drop-shadow(0 3px 1px white);
+          filter: drop-shadow(0 3px 1px white);
+}
+
+.fade .daysContainer div:nth-child(3) {
+  text-align: center;
+  margin: 0;
+  -webkit-filter: drop-shadow(0 3px 1px white);
+          filter: drop-shadow(0 3px 1px white);
+  white-space: nowrap;
+}
+
+.fade .daysContainer div img {
+  min-width: 100%;
+}
+
+.noLocation {
+  overflow: hidden;
+}
+
+.noLocation .errorForm {
+  position: absolute;
+  top: 45vh;
+  left: 35vw;
+  height: 2rem;
+  color: black;
+  width: 25vw;
+  margin: auto;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+}
+
+.noLocation .errorForm input[type="text"] {
+  padding: 0 1rem;
+  color: black;
+  font-size: 1.5rem;
+  background-color: #e68349;
+  border-radius: 25px;
+  mix-blend-mode: color-dodge;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
+  border-color: transparent;
+}
+
+.noLocation .errorForm input[type="text"]:hover {
+  mix-blend-mode: unset;
+}
+
+.noLocation .error {
+  text-align: center;
+}
+
+.noLocation .error h1 {
+  color: #e68349;
+  font-size: 10rem;
+  mix-blend-mode: difference;
+  margin: 0;
+  position: absolute;
+  top: 50vh;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation: scroll-left 10s linear infinite;
+          animation: scroll-left 10s linear infinite;
+}
+
+.Footer {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 5vw 3vh 0;
+}
+
+.Footer footer a {
+  text-decoration: none;
+  color: black;
+  text-shadow: 2px 2px white;
+  font-size: 0.6rem;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.Footer footer a span {
+  padding-bottom: -6px;
+}
+
+.Footer footer a span .footerIcon {
+  font-size: 1.5rem;
+  color: #e68349;
+  margin-bottom: -10px;
+  padding: 4px 0;
+}
+
+.Maincomponent .css-1hv9hnn {
+  height: 25vh;
+  width: 25vh;
+}
+
+.Maincomponent .css-1ghrie9,
+.Maincomponent .css-qg4eyy,
+.Maincomponent .css-5u8h2s {
+  height: 35vh;
+  width: 35vh;
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
 @-webkit-keyframes firstfadein {
@@ -228,11 +595,6 @@ input[type="text"] {
     -webkit-transform: scale(0.99);
             transform: scale(0.99);
   }
-}
-
-.fade {
-  -webkit-animation: fadein 1s ease-in-out;
-          animation: fadein 1s ease-in-out;
 }
 
 @-webkit-keyframes fadein {
@@ -343,422 +705,5 @@ input[type="text"] {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-}
-
-.currentLoading {
-  border-radius: 100%;
-  height: 35vh;
-  width: 35vh;
-  min-height: 200px;
-  min-width: 200px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  margin: 5vh auto 0 auto;
-}
-
-.margritte {
-  position: absolute;
-  top: 70vh;
-  left: 40vw;
-  font-size: 4rem;
-  font-family: "Cookie", cursive;
-}
-
-.current {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.current .currentWeather {
-  position: relative;
-  height: 35vh;
-  width: 35vh;
-  min-height: 200px;
-  min-width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0 auto;
-  border-radius: 50%;
-}
-
-@media (max-width: 768px) {
-  .current .currentWeather {
-    margin: 3vh auto;
-  }
-}
-
-.current .currentWeather span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(#ffffff50 90%, #ffffff);
-}
-
-.current .currentWeather span:nth-child(1) {
-  border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: animate 8s linear infinite;
-          animation: animate 8s linear infinite;
-}
-
-.current .currentWeather span:nth-child(2) {
-  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: animate 6s linear infinite;
-          animation: animate 6s linear infinite;
-}
-
-.current .currentWeather span:nth-child(3) {
-  border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: animate2 12s linear infinite;
-          animation: animate2 12s linear infinite;
-}
-
-.current .currentWeather span:nth-child(4) {
-  border-radius: 36% 42% 70% 30% / 42% 50% 56% 80%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: animate2 10s linear infinite;
-          animation: animate2 10s linear infinite;
-}
-
-.current .currentWeather span:nth-child(5) {
-  border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: animate2 18s linear infinite;
-          animation: animate2 18s linear infinite;
-}
-
-.current .currentWeather .pic {
-  height: 45%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-}
-
-.current .currentWeather .pic img {
-  min-width: 100%;
-  min-height: 100%;
-  scale: 1.4;
-  -webkit-filter: drop-shadow(-2px 2px 1px black);
-          filter: drop-shadow(-2px 2px 1px black);
-}
-
-.current .currentWeather div.description {
-  margin-top: -4vh;
-  font-size: 1.5rem;
-  -webkit-filter: drop-shadow(-2px -2px 1px white);
-          filter: drop-shadow(-2px -2px 1px white);
-}
-
-.current .currentWeather div.metrics {
-  margin-top: -1vh;
-  padding-bottom: 4vh;
-  font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-filter: drop-shadow(-2px -2px 1px white);
-          filter: drop-shadow(-2px -2px 1px white);
-}
-
-.daysContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 3vh;
-}
-
-.Day {
-  width: 22vh;
-  min-width: 180px;
-  max-height: 33vh;
-  min-height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: radial-gradient(#ffffff, #ffffff00);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  padding: 2vw;
-  font-size: 0.5rem;
-  margin: 2vh 1vw;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-
-.Day .forcastDay {
-  color: white;
-  font-size: 1.5rem;
-  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
-          filter: drop-shadow(0 3px 1px #5c3f0a);
-}
-
-.Day div:nth-child(2) {
-  height: 35%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-  -webkit-filter: drop-shadow(0 3px 1px white);
-          filter: drop-shadow(0 3px 1px white);
-}
-
-.Day div:nth-child(3) {
-  text-align: center;
-  margin: 0;
-  -webkit-filter: drop-shadow(0 3px 1px white);
-          filter: drop-shadow(0 3px 1px white);
-  white-space: nowrap;
-}
-
-.Day div img {
-  min-width: 100%;
-}
-
-.noLocation {
-  overflow: hidden;
-}
-
-.noLocation .errorForm {
-  position: absolute;
-  top: 45vh;
-  left: 35vw;
-  height: 2rem;
-  color: black;
-  width: 25vw;
-  margin: auto;
-  border-radius: 0.5rem;
-  padding: 0.1rem;
-}
-
-.noLocation .errorForm input[type="text"] {
-  padding: 0.1rem;
-  color: black;
-  font-size: 1.5rem;
-  background-color: #e68349;
-  border-radius: 25px;
-  mix-blend-mode: color-dodge;
-}
-
-.noLocation .error {
-  width: 100vw;
-  text-align: center;
-}
-
-.noLocation .error h1 {
-  color: #e68349;
-  font-size: 10rem;
-  mix-blend-mode: difference;
-  width: 100%;
-  margin: 0;
-  position: absolute;
-  top: 50vh;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-animation: scroll-left 10s linear infinite;
-          animation: scroll-left 10s linear infinite;
-}
-
-@-webkit-keyframes scroll-left {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-.Footer {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 0 5vw 3vh 0;
-}
-
-.Footer footer a {
-  text-decoration: none;
-  color: black;
-  text-shadow: 2px 2px white;
-  font-size: 0.6rem;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.Footer footer a span {
-  padding-bottom: -6px;
-}
-
-.Footer footer a span .footerIcon {
-  font-size: 1.5rem;
-  color: #e68349;
-  margin-bottom: -10px;
-  padding: 4px 0;
-}
-
-ul {
-  margin: 0.25px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.title {
-  margin-top: 2vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background-color: transparent;
-  border-radius: 1rem;
-  font-size: 2.5rem;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  overflow: visible;
-}
-
-.title p {
-  font-size: 2rem;
-  margin: 1px;
-}
-
-.title .tooltip {
-  position: absolute;
-  font-size: 0.7rem;
-  top: -1vh;
-  left: 15vw;
-  color: white;
-  -webkit-filter: drop-shadow(-2px -2px 1px black);
-          filter: drop-shadow(-2px -2px 1px black);
-  overflow: visible;
-}
-
-.title form {
-  max-width: 45vw;
-}
-
-.title form input {
-  font-size: 2rem;
-  padding: 0px;
-  overflow: visible;
-}
-
-form {
-  max-width: 45vw;
-}
-
-form input {
-  font-size: 2rem;
-  padding: 0px;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-.fade h2 {
-  margin: -3vh 0 0 0;
-}
-
-@media (max-width: 768px) {
-  .fade h2 {
-    margin: 3vh auto;
-  }
-}
-
-h2.loading {
-  position: absolute;
-  top: 45vh;
-  left: 0;
-}
-
-.errorForm {
-  width: 90%;
-  left: 3vw;
-}
-
-.Maincomponent .css-1hv9hnn {
-  height: 25vh;
-  width: 25vh;
-}
-
-.Maincomponent .css-1ghrie9,
-.Maincomponent .css-qg4eyy,
-.Maincomponent .css-5u8h2s {
-  height: 35vh;
-  width: 35vh;
 }
 /*# sourceMappingURL=App.css.map */
