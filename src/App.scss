@@ -286,7 +286,7 @@ input:focus {
     white-space: nowrap;
     letter-spacing: 0.05rem;
     @media (max-width: 768px) {
-      margin: 3vh auto;
+      margin: 3vh auto auto 2vw;
     }
   }
   .daysContainer {
