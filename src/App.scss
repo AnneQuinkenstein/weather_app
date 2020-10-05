@@ -16,7 +16,8 @@ html {
   height: 100%;
   body {
     position: relative;
-    overflow: hidden;
+    max-width: 100% !important;
+    overflow: hidden !important;
   }
 }
 
@@ -54,6 +55,11 @@ html {
     flex-direction: column;
     .title.loading {
       width: 100%;
+      color: white;
+      filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 0.05rem;
       p.loading {
         position: absolute;
         top: 0;
@@ -74,6 +80,11 @@ html {
       top: 45vh;
       left: 0;
       font-size: 1.5rem;
+      color: white;
+      filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 0.05rem;
     }
     .margritte {
       position: absolute;
@@ -83,19 +94,6 @@ html {
       font-family: "Cookie", cursive;
     }
   }
-}
-
-// p {
-//   margin: 5px;
-// }
-
-.title,
-h2 {
-  color: white;
-  filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
-  overflow: hidden;
-  white-space: nowrap;
-  letter-spacing: 0.05rem;
 }
 
 // form input styleing
@@ -163,6 +161,11 @@ input:focus {
       font-size: 2.5rem;
       align-self: flex-start;
       overflow: visible;
+      color: white;
+      filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 0.05rem;
       p {
         font-size: 2rem;
         margin: 1px;
@@ -275,6 +278,11 @@ input:focus {
   h2 {
     margin: -3vh 0 0 0;
     font-size: 1.5rem;
+    color: white;
+    filter: drop-shadow(0 3px 1px rgb(92, 63, 10));
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0.05rem;
     @media (max-width: 768px) {
       margin: 3vh auto;
     }
@@ -356,13 +364,13 @@ input:focus {
     }
   }
   .error {
-    // width: 100vw;
     text-align: center;
+    max-width: 100% !important;
+    overflow: hidden !important;
     h1 {
       color: $orange;
       font-size: 10rem;
       mix-blend-mode: difference;
-      // width: 100%;
       margin: 0;
       position: absolute;
       top: 50vh;
