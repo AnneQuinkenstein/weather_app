@@ -11,7 +11,7 @@ const Loading = ({ isLoading }) => {
                          <BounceLoader loading={isLoading}  size={300} color={'grey'} />
                     </div>
                 </div>
-                <h2 className="loading">5-days forecast>></h2>
+                <h2 className="loading">coming soon</h2>
                 <h1 className="margritte">Ceci n'est pas le temps.</h1>
             </div>
         </div>
