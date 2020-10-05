@@ -18,7 +18,8 @@ html {
 
 html body {
   position: relative;
-  overflow: auto;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 .container {
@@ -57,11 +58,13 @@ html body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 100vh;
+  width: 100vw;
 }
 
 .container .content .Maincomponent {
   position: relative;
-  width: 90vw;
+  min-width: 90%;
+  margin: 0 auto;
 }
 
 .firstfade {
@@ -83,6 +86,12 @@ html body {
 
 .firstfade .current .title.loading {
   width: 100%;
+  color: white;
+  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
+          filter: drop-shadow(0 3px 1px #5c3f0a);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.05rem;
 }
 
 .firstfade .current .title.loading p.loading {
@@ -103,28 +112,21 @@ html body {
 }
 
 .firstfade .current h2.loading {
-  position: absolute;
-  top: 45vh;
-  left: 0;
   font-size: 1.5rem;
-}
-
-.firstfade .current .margritte {
-  position: absolute;
-  top: 70vh;
-  left: 40vw;
-  font-size: 4rem;
-  font-family: "Cookie", cursive;
-}
-
-.title,
-h2 {
   color: white;
   -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
           filter: drop-shadow(0 3px 1px #5c3f0a);
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0.05rem;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.firstfade .current .margritte {
+  font-size: 4rem;
+  font-family: "Cookie", cursive;
+  margin: 10vh 10vw;
 }
 
 textarea:focus,
@@ -216,11 +218,23 @@ input:focus {
   -ms-flex-item-align: start;
       align-self: flex-start;
   overflow: visible;
+  color: white;
+  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
+          filter: drop-shadow(0 3px 1px #5c3f0a);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.05rem;
 }
 
 .fade .current .title p {
   font-size: 2rem;
   margin: 1px;
+}
+
+@media (max-width: 768px) {
+  .fade .current .title p {
+    margin-left: 2vw;
+  }
 }
 
 .fade .current .title .tooltip {
@@ -379,6 +393,12 @@ input:focus {
 .fade h2 {
   margin: -3vh 0 0 0;
   font-size: 1.5rem;
+  color: white;
+  -webkit-filter: drop-shadow(0 3px 1px #5c3f0a);
+          filter: drop-shadow(0 3px 1px #5c3f0a);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.05rem;
 }
 
 @media (max-width: 768px) {
@@ -464,18 +484,15 @@ input:focus {
 
 .noLocation {
   overflow: hidden;
+  width: 100vw;
 }
 
 .noLocation .errorForm {
-  position: absolute;
-  top: 45vh;
-  left: 35vw;
   height: 2rem;
   color: black;
-  width: 25vw;
-  margin: auto;
   border-radius: 0.5rem;
   padding: 0.1rem;
+  margin: 38vh 10vw 0 10vw;
 }
 
 .noLocation .errorForm input[type="text"] {
@@ -496,6 +513,8 @@ input:focus {
 
 .noLocation .error {
   text-align: center;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 
 .noLocation .error h1 {
@@ -503,8 +522,6 @@ input:focus {
   font-size: 10rem;
   mix-blend-mode: difference;
   margin: 0;
-  position: absolute;
-  top: 50vh;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-animation: scroll-left 10s linear infinite;
