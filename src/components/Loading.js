@@ -6,7 +6,7 @@ const Loading = ({ isLoading }) => {
         <div className="firstfade">
             <div className='current'>
                 <div className="title loading">
-                    <p className="loading">Weather >>  </p>
+                    <p className="loading">Weather &gt;&gt; </p>
                     <div className="currentLoading">
                          <BounceLoader loading={isLoading}  size={300} color={'grey'} />
                     </div>
