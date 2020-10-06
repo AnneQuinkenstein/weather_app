@@ -294,6 +294,8 @@ input:focus {
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 3vh;
+    perspective: 1000px;
+    perspective-origin: bottom left;
     .Day {
       width: 22vh;
       min-width: 180px;
@@ -309,6 +311,7 @@ input:focus {
       font-size: 0.5rem;
       margin: 2vh 1vw;
       transition: all 1s ease-in-out;
+      transform: skew(-5deg); 
       .forcastDay {
         color: white;
         font-size: 1.5rem;

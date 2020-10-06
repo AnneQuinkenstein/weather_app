@@ -417,6 +417,10 @@ input:focus {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 3vh;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-perspective-origin: bottom left;
+          perspective-origin: bottom left;
 }
 
 .fade .daysContainer .Day {
@@ -445,6 +449,8 @@ input:focus {
   margin: 2vh 1vw;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  -webkit-transform: skew(-5deg);
+          transform: skew(-5deg);
 }
 
 .fade .daysContainer .Day .forcastDay {
