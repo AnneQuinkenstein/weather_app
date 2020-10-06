@@ -14,7 +14,7 @@ const DaysList = (props) => {
 
     return (
         <>
-            <h2>coming soon </h2>
+            <h2>5-day forecast</h2>
             <div className="daysContainer">
                     {dailyData.map((data) => 
                     <Day {...data} key={data.dt_txt} /> 

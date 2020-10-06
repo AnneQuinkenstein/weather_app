@@ -15,7 +15,7 @@ const Title = (props) => {
   return (
     <>
       <div className="title">
-        <p>Weather &gt;&gt;  </p>
+        <p>Weather &gt;&gt; </p>
         <Search {...props} />
         {props.err && <p className="tooltip"> {props.err.message}</p>}
         <p className="tooltip" style={style}> type here for other cities</p>
