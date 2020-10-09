@@ -295,7 +295,7 @@ input:focus {
     flex-wrap: wrap;
     margin: 3vh;
     perspective: 1000px;
-    perspective-origin: bottom left;
+    perspective-origin: bottom center;
     .Day {
       width: 22vh;
       min-width: 180px;
