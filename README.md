@@ -7,12 +7,12 @@
 
 <!-- PROJECT LOGO -->
 
-  <h3 align="center">TITLE</h3>
+  <h3 align="center">WEATHER APP</h3>
 
 <br />
 <p align="center">
   <a href="https://weather-aquin.netlify.app/">
-    <img src="%PUBLIC_URL%/images/portfolio.png" alt="WeatherappPic" width="300" height="160">
+    <img src="https://i.imgur.com/Vt1gQQb.mp4" alt="WeatherappPic" width="300" height="160">
   </a>
 
   <p align="center">
