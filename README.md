@@ -7,12 +7,13 @@
 
 <!-- PROJECT LOGO -->
 
-  <h3 align="center">WEATHER APP</h3>
+  <h1 align="center">WEATHER APP</h3>
 
 <br />
 <p align="center">
   <a href="https://weather-aquin.netlify.app/">
-    <img src="https://i.imgur.com/Vt1gQQb.mp4" alt="WeatherappPic" width="300" height="160">
+    <img src="https://drive.google.com/file/d/1N2PWMG0Bt5QbvF0pG7BGcIhOYgleXIZb/view?usp=sharing" alt="WeatherappPic" width="300" height="160">
+    <img src="https://drive.google.com/file/d/1N2PWMG0Bt5QbvF0pG7BGcIhOYgleXIZb/view?usp=sharing" alt="WeatherappPic" onerror="this.onerror=null;this.src='i.imgur.com/M00gkyA.jpg'" />
   </a>
 
   <p align="center">
@@ -25,7 +26,7 @@
   </p>
 </p>
 
-### Built With
+## Built With
 
 - [React](https://reactjs.org/)
 - [React Hooks](https://reactjs.org/)
@@ -45,7 +46,7 @@ APIs
 -[Open Weather API](https://openweathermap.org/api)
 
 ## Special Gotchas 
-# Fetch Geolocation
+### Fetch Geolocation
 
 ```javascript 
  const getLocation = () => {
@@ -55,7 +56,7 @@ APIs
         fetchData(lat, lon);
       }, error)}
 ``` 
-# Fetch Weatherdata & Errorhandling 
+### Fetch Weatherdata & Errorhandling 
 
 ```javascript 
  const onSearch = (cityName) => {
@@ -72,13 +73,13 @@ APIs
   }
 ``` 
 
-### Hidden Key
+#### Hidden Key
 Key for open Weather APIs is hidden in .env file, which is part of .gitignore to avoid pushing it to github
 
-### Open API Fetch
+#### Open API Fetch
  The weather is either pulled with the latitude/ longitude or accourding to a city with is typed in. 
 
-### Error-Handling
+#### Error-Handling
  If the typed in City-name is not known by the API, there should be thrown an error to inform the user. 
   
 ## How to get started
@@ -93,4 +94,4 @@ Key for open Weather APIs is hidden in .env file, which is part of .gitignore to
 <a target="_blank" href="mailto:a.quinkenstein@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
 </p>
 
-<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>get in touch!</em>
+<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>Don't hesitate to get in touch!</em>
