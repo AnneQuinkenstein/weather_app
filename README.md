@@ -32,11 +32,11 @@
 
 #### Librarys
 
-- [Moment](https://www.npmjs.com/package/react-moment)
-- [Emotion](https://emotion.sh/docs/introduction)
-- [Body-Classname](https://www.npmjs.com/package/react-body-classname)
-- [React Icons](https://react-icons.github.io)
-- [React Spinners](https://www.npmjs.com/package/react-spinners)
+- [Moment](https://www.npmjs.com/package/react-moment) to display Dates/Days
+- [Emotion](https://emotion.sh/docs/introduction) to access CSS in JSX
+- [Body-Classname](https://www.npmjs.com/package/react-body-classname) for a dynamic access of the body-tag
+- [React Icons](https://react-icons.github.io) - for Weather Icons
+- [React Spinners](https://www.npmjs.com/package/react-spinners) for Loading - Page
 
 #### APIs
 
@@ -88,23 +88,22 @@ Key for open Weather APIs is hidden in .env file, which is part of .gitignore to
 
 The weather is either pulled with the latitude/ longitude or accourding to a city with is typed in.
 
-![Errormessage for wrong City](https://i.imgur.com/cfkE4Q5.png)
-
 #### Error-Handling
 
-If the typed in City-name is not known by the API, there should be thrown an error to inform the user.
+If the typed in City-name is not known by the API, it returns 404 + there will be thrown an error to inform the user.
+![Errormessage for wrong City](https://i.imgur.com/cfkE4Q5.png)
 
 ### Show different Pages accourding to an event
 Show either 
-Sucess - if
+Sucess -> if
 - Geolocation is allowed
 - Data from Open Weather API is fetched 
  
-Error - if 
-Geolocation is not allowed
+Error -> if 
+- Geolocation is not allowed
 
-Loading - if 
-Data is on it's way 
+Loading -> if 
+- Data is on it's way 
 
 ```javascript
 
@@ -133,7 +132,7 @@ Data is on it's way
 
 I used React Switch Transition, because i wanted to control the render between state transitions. The Current Weather Blub is animated, if the city is changing and a new Blub is displayed. The part in JSX has a key for each Weather + and a timeset which is the mirrowed in the CSS Part, where is set what is going to happen in the time-in & -out. 
 
-````javascript
+```javascript
  <SwitchTransition>
       <CSSTransition
         key={props.city.id}
@@ -147,7 +146,7 @@ I used React Switch Transition, because i wanted to control the render between s
       </CSSTransition>
  </SwitchTransition>
 ``` 
-There are 3 stages for Entry & Exit, which are explained in the [Instructions](http://reactcommunity.org/react-transition-group/switch-transition). Here is one example from the code. 
+There are 3 stages for Entry & Exit, which are [explained here](http://reactcommunity.org/react-transition-group/switch-transition) & the enter animation in CSS: 
 
 ```css
 .currentWeather-enter {
@@ -241,7 +240,7 @@ let sectionStyle = (process.env.PUBLIC_URL + `/images/${image()}.png`);
   const temp = (props.main.temp * 2).toFixed() / 2;
   Rounded to .5 
 
-  
+
 
 ## How to get started
 
