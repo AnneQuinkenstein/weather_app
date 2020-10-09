@@ -449,8 +449,6 @@ input:focus {
   margin: 2vh 1vw;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  -webkit-transform: skew(-5deg);
-          transform: skew(-5deg);
 }
 
 .fade .daysContainer .Day .forcastDay {
@@ -460,28 +458,14 @@ input:focus {
           filter: drop-shadow(0 3px 1px #5c3f0a);
 }
 
-.fade .daysContainer div:nth-child(2) {
-  height: 32%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-  -webkit-filter: drop-shadow(0 3px 1px white);
-          filter: drop-shadow(0 3px 1px white);
+.fade .daysContainer div:nth-child(odd) {
+  -webkit-transform: skew(2deg);
+          transform: skew(2deg);
 }
 
-.fade .daysContainer div:nth-child(3) {
-  text-align: center;
-  margin: 0;
-  -webkit-filter: drop-shadow(0 3px 1px white);
-          filter: drop-shadow(0 3px 1px white);
-  white-space: nowrap;
+.fade .daysContainer div:nth-child(even) {
+  -webkit-transform: skew(-2deg);
+          transform: skew(-2deg);
 }
 
 .fade .daysContainer div img {

@@ -10,7 +10,7 @@
 <br />
 <p align="center">
   <a href="https://weather-aquin.netlify.app/">
-    <img src="https://i.imgur.com/M00gkyA.jpg" alt="WeatherappPic" width="300" height="160">
+    <img src="https://i.imgur.com/5Yo1eIe.jpg" alt="WeatherappPic" width="300" height="160">
   </a>
 
   <p align="center">
@@ -18,7 +18,6 @@
     <br />
     <br />
     <a href="https://weather-aquin.netlify.app/">Demo</a>
-    ·
     <a href="https://github.com/AnneQuinkenstein/weather_app/issues">Report Bug</a>
   </p>
 </p>
@@ -95,11 +94,76 @@ The weather is either pulled with the latitude/ longitude or accourding to a cit
 
 If the typed in City-name is not known by the API, there should be thrown an error to inform the user.
 
+### Show different Pages accourding to an event
+Show either 
+Sucess - if
+- Geolocation is allowed
+- Data from Open Weather API is fetched 
+ 
+Error - if 
+Geolocation is not allowed
+
+Loading - if 
+Data is on it's way 
+
+```javascript
+
+  const renderData = () => {
+    if (data) {
+      return <Home {...data} onSearch={onSearch} err={err} />
+    } else if (errorState) {
+      return <NoLocationAllowed setErrorStateFalse={setErrorStateFalse} onSearch={onSearch} />
+    } else {
+      return <Loading isLoading={!data} />
+    }
+  }
+
+  return (
+[...]
+    <div className='Maincomponent fade'>
+       {renderData()}
+    </div>
+[...]  
+  );
+``` 
+
 ### Animations
 
-![CurrentWeahter Blob](https://i.imgur.com/j05FML9.png)
+#### Fading in Animations on changing Sites with React Transition Group
+
+I used React Switch Transition, because i wanted to control the render between state transitions. The Current Weather Blub is animated, if the city is changing and a new Blub is displayed. The part in JSX has a key for each Weather + and a timeset which is the mirrowed in the CSS Part, where is set what is going to happen in the time-in & -out. 
+
+````javascript
+ <SwitchTransition>
+      <CSSTransition
+        key={props.city.id}
+        timeout={{
+            enter: 800,
+            exit: 50
+        }}
+       classNames='currentWeather'
+                    >
+       <CurrentWeather {...props} />
+      </CSSTransition>
+ </SwitchTransition>
+``` 
+There are 3 stages for Entry & Exit, which are explained in the [Instructions](http://reactcommunity.org/react-transition-group/switch-transition). Here is one example from the code. 
+
+```css
+.currentWeather-enter {
+  transform: scale(0.98);
+  opacity: 0.5;
+}
+.currentWeather-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.8s cubic-bezier(0.37, 0, 0.63, 1), opacity 0.8s;
+}
+```
 
 #### Blob-Animation of Current Weather
+![CurrentWeahter Blob](https://i.imgur.com/j05FML9.png)
+
 ```html
 <span></span>
 <span></span>
@@ -125,6 +189,7 @@ servral ->
 ```
 
 #### Border-Animation of 5-day Forecast
+![5-days forecast](https://i.imgur.com/Vq4w4fL.png)
 
 import emotion Libary to use CSS with Javascript 
 ```javascript
@@ -156,6 +221,8 @@ use a random Number to set the borders in a time intervall
 
 #### Changing Background-Pics Animations
 
+The Open Weather App sents a Code for each Weather Conditions at Day & Night-Time. I got royalty free pics from [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/). I renamed the pics like the codes and put the Codes as a variabel in the urls for the background-pic. To access the CSS i used the libary emotion + to access the body tag to change the background-pic on body i used the react-body-classname library. 
+
 ```javascript
 /** @jsx jsx */
 import BodyClassName from 'react-body-classname';
@@ -166,6 +233,15 @@ let sectionStyle = (process.env.PUBLIC_URL + `/images/${image()}.png`);
 <BodyClassName className="container" css={{ backgroundImage: `url("${errorState ? errorStyle : sectionStyle}")` }}>
 
 ``` 
+
+### Calculations 
+
+#### Round a num
+
+  const temp = (props.main.temp * 2).toFixed() / 2;
+  Rounded to .5 
+
+  
 
 ## How to get started
 
