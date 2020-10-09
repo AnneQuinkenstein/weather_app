@@ -12,8 +12,7 @@
 <br />
 <p align="center">
   <a href="https://weather-aquin.netlify.app/">
-    <img src="https://drive.google.com/file/d/1N2PWMG0Bt5QbvF0pG7BGcIhOYgleXIZb/view?usp=sharing" alt="WeatherappPic" width="300" height="160">
-    <img src="https://drive.google.com/file/d/1N2PWMG0Bt5QbvF0pG7BGcIhOYgleXIZb/view?usp=sharing" alt="WeatherappPic" onerror="this.onerror=null;this.src='i.imgur.com/M00gkyA.jpg'" />
+    <img src="https://i.imgur.com/M00gkyA.jpg" alt="WeatherappPic" width="300" height="160">
   </a>
 
   <p align="center">
@@ -34,19 +33,19 @@
 - [SCSS](https://sass-lang.com/)
 - [Flexbox](https://dev.to/annequinkenstein/til-css-flexbox-glo)
 
-Librarys
+### Librarys
 - [Moment](https://www.npmjs.com/package/react-moment)
 - [Emotion](https://emotion.sh/docs/introduction)
 - [Body-Classname](https://www.npmjs.com/package/react-body-classname)
 - [React Icons](https://react-icons.github.io)
 - [React Spinners](https://www.npmjs.com/package/react-spinners)
 
-
-APIs
+### APIs
 -[Open Weather API](https://openweathermap.org/api)
 
 ## Special Gotchas 
 ### Fetch Geolocation
+ ![Computer Question for GeoLocation](https://i.imgur.com/OsIBFEN.png)
 
 ```javascript 
  const getLocation = () => {
@@ -79,6 +78,7 @@ Key for open Weather APIs is hidden in .env file, which is part of .gitignore to
 #### Open API Fetch
  The weather is either pulled with the latitude/ longitude or accourding to a city with is typed in. 
 
+ ![Errormessage for wrong City](https://i.imgur.com/cfkE4Q5.png)
 #### Error-Handling
  If the typed in City-name is not known by the API, there should be thrown an error to inform the user. 
   
