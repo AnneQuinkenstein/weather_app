@@ -34,7 +34,7 @@
 
 - [Moment](https://www.npmjs.com/package/react-moment) to display Dates/Days
 - [Emotion](https://emotion.sh/docs/introduction) to access CSS in JSX
-- [Body-Classname](https://www.npmjs.com/package/react-body-classname) for a dynamic access of the body-tag
+- [Body-Classname](https://www.npmjs.com/package/react-body-classname) provides a declarative way to specify document.body.className 
 - [React Icons](https://react-icons.github.io) - for Weather Icons
 - [React Spinners](https://www.npmjs.com/package/react-spinners) for Loading - Page
 
