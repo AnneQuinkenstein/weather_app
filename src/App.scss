@@ -318,11 +318,17 @@ input:focus {
       }
     }
     div {
-      &:nth-child(odd) {
+      &:nth-child(1) {
+        transform: skew(-4deg);
+      }
+      &:nth-child(2) {
+        transform: skew(-2deg);
+      }
+      &:nth-child(4) {
         transform: skew(2deg);
       }
-      &:nth-child(even) {
-        transform: skew(-2deg);
+      &:nth-child(5) {
+        transform: skew(4deg);
       }
       img {
         min-width: 100%;

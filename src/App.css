@@ -458,14 +458,24 @@ input:focus {
           filter: drop-shadow(0 3px 1px #5c3f0a);
 }
 
-.fade .daysContainer div:nth-child(odd) {
+.fade .daysContainer div:nth-child(1) {
+  -webkit-transform: skew(-4deg);
+          transform: skew(-4deg);
+}
+
+.fade .daysContainer div:nth-child(2) {
+  -webkit-transform: skew(-2deg);
+          transform: skew(-2deg);
+}
+
+.fade .daysContainer div:nth-child(4) {
   -webkit-transform: skew(2deg);
           transform: skew(2deg);
 }
 
-.fade .daysContainer div:nth-child(even) {
-  -webkit-transform: skew(-2deg);
-          transform: skew(-2deg);
+.fade .daysContainer div:nth-child(5) {
+  -webkit-transform: skew(4deg);
+          transform: skew(4deg);
 }
 
 .fade .daysContainer div img {
