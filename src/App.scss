@@ -6,7 +6,7 @@ $orange: #e68349;
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: bold;
   font-size: calc(0.5vw + 12px);
 }
@@ -179,7 +179,7 @@ input:focus {
         left: 15vw;
         color: white;
         filter: drop-shadow(-2px -2px 1px black);
-        overflow: visible; 
+        overflow: visible;
       }
       form {
         max-width: 45vw;
@@ -257,7 +257,7 @@ input:focus {
         img {
           min-width: 100%;
           min-height: 100%;
-          scale: 1.4;
+          transform: scale(1.4); 
           filter: drop-shadow(-2px 2px 1px black);
         }
       }
@@ -310,7 +310,7 @@ input:focus {
       padding: 2vw;
       font-size: 0.5rem;
       margin: 2vh 1vw;
-      transition: all 1s ease-in-out; 
+      transition: all 1s ease-in-out;
       .forcastDay {
         color: white;
         font-size: 1.5rem;
@@ -332,6 +332,8 @@ input:focus {
       }
       img {
         min-width: 100%;
+        min-height: 100%;
+        transform: scale(1.4); 
       }
     }
   }
