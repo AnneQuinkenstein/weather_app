@@ -427,7 +427,7 @@ input:focus {
 .fade .daysContainer .Day {
   width: 22vh;
   min-width: 180px;
-  max-height: 33vh;
+  max-height: 45vh;
   min-height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
